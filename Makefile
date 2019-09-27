@@ -6,7 +6,7 @@
 #    By: bford <bford@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 11:34:46 by bford             #+#    #+#              #
-#    Updated: 2019/09/27 19:08:43 by bford            ###   ########.fr        #
+#    Updated: 2019/09/27 23:07:25 by bford            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,5 @@ exe:
 			gcc $(FLAGS) *.o
 			rm *.o
 			./a.out
+push:
+			git add -A && git commit -ma && git push
