@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 20:08:57 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 20:17:12 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int		main(void)
 
 	//printf("%.5d\n", 123);
 	//ft_printf("%dd\n");
-	ft_printf("%%da\n");
-	printf("%%da\n");
+	//printf("%%da\n");
 	//ft_printf("%*.*dd\n", 7, 8);
 	//printf("%*.*dd\n", 7, 8, 9);
 	//ft_printf("%7.*dd\n", 7, 8);

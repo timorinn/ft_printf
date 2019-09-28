@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 20:08:26 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 20:23:53 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 {
 	t_pf	*l;
 
-	l = ft_lstnew_pf();
+	if (!(l = ft_lstnew_pf()))
+		return (NULL);
 	while (**s && (**s == '-' || **s == '+' || **s == '-' || **s == '#' ||
 	**s == '0' || **s == ' '))
 	{
@@ -104,9 +105,12 @@ int		ft_do_job(char **s, va_list a)
 	l = NULL;
 	if (*(++(*s)) == '%' && ++(*s))
 		write(1, "%", 1);
+	else if ((l = ft_pars_param_mpons(s, a)))
+	{
+		ft_postwork(l, a);
+	}
 	else
-		l = ft_pars_param_mpons(s, a);
-	
+		return (-1);
 	if (l)
 		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
 		l->m, l->p, l->o, l->nol, l->s, l->i1, l->i2, l->f, l->c);

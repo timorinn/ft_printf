@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_postwork.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 20:19:09 by bford            ###   ########.fr       */
+/*   Created: 2019/09/28 20:19:35 by bford             #+#    #+#             */
+/*   Updated: 2019/09/28 20:30:54 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> // DEL
-
-#include "libft.h"
+#include <stdarg.h>
 #include "ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-
-int		ft_printf(char *s, ...)
+int		ft_postwork(t_pf *l, va_list a)
 {
-	va_list	a;
-	
-	va_start(a, s);
-	while (*s)
-		if (*s == '%')
-			ft_do_job(&s, a);
-		else
-			write(1, s++, 1);
-	va_end(a);
-	return (1);
+	if (!((l->c == 'c' && ft_c(l, a)) || (l->c == 's' && ft_s(l, a))
+	|| (l->c == 'p' && ft_p(l, a)) || (l->c == 'd' && ft_d(l, a)) ||
+	(l->c == 'i' && ft_i(l, a)) || (l->c == 'o' && ft_o(l, a)) ||
+	(l->c == 'u' && ft_u(l, a)) || (l->c == 'x' && ft_x(l, a)) ||
+	(l->c == 'X' && ft_X(l, a)) || (l->c == 'f' && ft_f(l, a))))
+		return (-1);
 }
