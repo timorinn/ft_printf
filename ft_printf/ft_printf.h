@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/09/27 17:49:18 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 19:22:12 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 typedef struct	t_pr
 {
-	int			plus;
-	int			minus;
-	int			oct;
-	int			space;
+	int			p;
+	int			m;
+	int			o;
+	int			s;
 	int			nol;
 	int			i1;
 	int			i2;
+	int			f;
 	char		c;
 }				t_pf;
 

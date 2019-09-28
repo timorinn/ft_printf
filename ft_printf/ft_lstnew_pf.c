@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:54:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/27 20:34:11 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 19:21:53 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ t_pf	*ft_lstnew_pf(void)
 
 	if (!(l = (t_pf *)malloc(sizeof(t_pf))))
 		return (0);
-	l->minus = 0;
-	l->plus = 0;
-	l->c = 0;
+	l->m = 0;
+	l->p = 0;
+	l->o = 0;
+	l->s = 0;
+	l->nol = 0;
 	l->i1 = 0;
 	l->i2 = 0;
-	l->oct = 0;
-	l->space = 0;
-	l->nol = 0;
+	l->f = 0;
+	l->c = 0;
 	return (l);
 }
