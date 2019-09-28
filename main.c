@@ -6,21 +6,29 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 20:17:12 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 22:06:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "ft_printf.h"
 #include "libft.h"
 #include <stdio.h>
 
 int		main(void)
 {
-	//ft_printf("my printf |%-+-##  0 -+*d\n", 12);
-	//ft_printf("%-- -  -   + + +  -  - ########## 0000000000000000010.12\n", 123);
-	//printf("%----++--10.12d\n", 123);
 
-	//printf("%.5d\n", 123);
+	//printf("%c\n", 'a');
+	
+	   printf("|%c|\n", 'a');
+	ft_printf("|%c|\n", 'a');
+	   printf("|%.c|\n", 'a');
+	ft_printf("|%.c|\n", 'a');
+	   printf("|%5c|\n", 'a');
+	ft_printf("|%5c|\n", 'a');
+	   printf("|%10c|\n", 'a');
+	ft_printf("|%10c|\n", 'a');
+	
 	//ft_printf("%dd\n");
 	//printf("%%da\n");
 	//ft_printf("%*.*dd\n", 7, 8);

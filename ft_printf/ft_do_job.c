@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 20:23:53 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/28 22:00:30 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 t_pf	*ft_pars_param_spec(char **s, t_pf *l)
 {
 	l->c += (**s == 'c' ? 'c' : 0);
-	l->c += ((**s == 'i' || **s == 'd') ? 'd' : 0);
+	l->c += ((**s == 'd' || **s == 'i') ? 'd' : 0);
 	l->c += (**s == 's' ? 's' : 0);
 	l->c += (**s == 'p' ? 'p' : 0);
 	l->c += (**s == 'u' ? 'u' : 0);
@@ -35,6 +35,7 @@ t_pf	*ft_pars_param_spec(char **s, t_pf *l)
 t_pf	*ft_pars_param_flag(char **s, t_pf *l)
 {
 	l->f = (**s == 'h' && *(*s + 1) == 'h' ? 1 : 0);
+	
 	l->f = (**s == 'l' && *(*s + 1) == 'l' ? 2 : 0);
 	l->f = (**s == 'h' ? 3 : 0);
 	l->f = (**s == 'l' ? 4 : 0);
@@ -111,9 +112,10 @@ int		ft_do_job(char **s, va_list a)
 	}
 	else
 		return (-1);
+	/*
 	if (l)
 		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
 		l->m, l->p, l->o, l->nol, l->s, l->i1, l->i2, l->f, l->c);
-	
+	*/
 	return (1);
 }
