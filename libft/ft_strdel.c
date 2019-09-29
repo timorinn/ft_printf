@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stradd.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/29 14:14:46 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 20:36:28 by bford            ###   ########.fr       */
+/*   Created: 2019/09/09 20:33:12 by bford             #+#    #+#             */
+/*   Updated: 2019/09/29 20:17:25 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-#include "libft.h"
 #include <string.h>
 #include <stdlib.h>
 
-char	*ft_stradd(char *ms, char c, int size)
+int		ft_strdel(char **as)
 {
-	char	*fresh;
-	char	*cp1;
-	char	*cp2;
-	
-	cp1 = ms;
-	if (!(fresh = ft_strnew(ft_strlen(ms) + size)))
-		return (NULL);
-	cp2 = fresh;
-	while (*ms)
-		*fresh++ = *ms++;
-	ft_strdel(&cp1);
-	while (size--)
-		*fresh++ = c;
-	return (cp2);
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+	return (1);
 }

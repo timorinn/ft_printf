@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 17:09:20 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 11:47:12 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 20:04:30 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoinfree(char *s1, char const *s2, int size)
 	copy2 = s1;
 	while (*s1)
 		*fresh++ = *s1++;
-	free(copy2);
+	ft_strdel(&copy2);
 	while (*s2 && size--)
 		*fresh++ = *s2++;
 	return (copy);

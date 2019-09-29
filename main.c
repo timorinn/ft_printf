@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 15:08:44 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 20:25:45 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,36 @@
 int		main(void)
 {
 
-	ft_printf("|%-10c|", 'a');
-	
 	// MY C
+	
+	   printf(" 1)|%c|\n", 'a');
+	ft_printf(" 1)|%c|\n", 'a');
+	   printf(" 2)|%.c|\n", 'a');
+	ft_printf(" 2)|%.c|\n", 'a');
+	ft_printf(" 2)|%..c|\n", 'a');
+	   printf(" 3)|%5c|\n", 'a');
+	ft_printf(" 3)|%5c|\n", 'a');
+	   printf(" 4)|%10.c|\n", 'a');
+	ft_printf(" 4)|%10.c|\n", 'a');
+	   printf(" 5)|%10c|\n", 48);
+	ft_printf(" 5)|%10c|\n", 48);
+	   printf(" 6)|%*c|\n", 12, 48);
+	ft_printf(" 6)|%*c|\n", 12, 48);
+	   printf(" 7)|%-*c|\n", 12, 48);
+	ft_printf(" 7)|%-*c|\n", 12, 48);
+	
+	
+	
 	/*
-	   printf("|||%c|\n", 'a');
-	ft_printf("|%c|\n", 'a');
-	   printf("|%.c|\n", 'a');
-	ft_printf("|%..c|\n", 'a');
-	   printf("|%5c|\n", 'a');
-	ft_printf("|%5c|\n", 'a');
-	   printf("|%10.c|\n", 'a');
-	ft_printf("|%10.c|\n", 'a');
-	   printf("|%10c|\n", 48);
-	ft_printf("|%10c|\n", 48);
-	   printf("|%*c|\n", 12, 48);
-	ft_printf("|%*c|\n", 12, 48);
-	   printf("|%-*c|\n", 12, 48);
-	ft_printf("|%-*c|\n", 12, 48);
-	*/
-
 	// MY S
-	/*
-	   printf("%10.s\n", "str");
-	ft_printf("%s\n", "str");
-	   printf("%10.2s\n", "str");
-	ft_printf("%s\n", "str");
-	   printf("%10.5s\n", "str");
-	ft_printf("%s\n", "str");
+	printf("\nMY S\n");
+	   printf("1)|%10.s|\n", "str");
+
+	   printf("2)|%10.2s|\n", "str");
+
+	   printf("3)|%10.5s|\n", "str");
+	   printf("4)|%.5s|\n", "str");
+	   printf("5)|%10.1s|\n", "str");
 	*/
 	
 	//ft_printf("%dd\n");

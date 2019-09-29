@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stradd.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/29 14:14:46 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 20:36:28 by bford            ###   ########.fr       */
+/*   Created: 2019/09/04 10:47:22 by bford             #+#    #+#             */
+/*   Updated: 2019/09/29 20:04:57 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-#include "libft.h"
-#include <string.h>
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_stradd(char *ms, char c, int size)
+char	*ft_strdup(char const *src)
 {
-	char	*fresh;
-	char	*cp1;
-	char	*cp2;
-	
-	cp1 = ms;
-	if (!(fresh = ft_strnew(ft_strlen(ms) + size)))
+	char	*s;
+	int		len;
+
+	len = ft_strlen(src);
+	if (!(s = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	cp2 = fresh;
-	while (*ms)
-		*fresh++ = *ms++;
-	ft_strdel(&cp1);
-	while (size--)
-		*fresh++ = c;
-	return (cp2);
+	while (*src)
+		*s++ = *src++;
+	*s = '\0';
+	s -= len;
+	return (s);
 }

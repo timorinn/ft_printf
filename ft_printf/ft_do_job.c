@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 15:00:41 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 20:30:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ t_pf	*ft_pars_param_spec(char **s, t_pf *l)
 	l->c += (**s == 'X' ? 'X' : 0);
 	l->c += (**s == 'o' ? 'o' : 0);
 	l->c += (**s == 'f' ? 'f' : 0);
-	(*s)++;
+	if (l->c)
+		(*s)++;
 	return (l);
 }
 
@@ -87,10 +88,7 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 	t_pf	*l;
 
 	if (!(l = ft_lstnew_pf()))
-	{
-		free (l);
 		return (NULL);
-	}
 	while (**s && (**s == '-' || **s == '+' || **s == '-' || **s == '#' ||
 	**s == '0' || **s == ' '))
 	{
@@ -107,16 +105,25 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 char	*ft_do_job(char **s, char **ms, va_list a)
 {
 	t_pf *l;
-
+	
 	l = NULL;
-	if (*(++(*s)) == '%' && (*ms = ft_strjoinfree(*ms, "%", 1)))
+	if (*(++(*s)) == '%')
+	{
+		if ((*ms = ft_strsym(ms, '%')))
+		{
+			printf("{1}\n");
+			return (*ms);
+			printf("{2}\n");
+		}
+	}
+	else if ((l = ft_pars_param_mpons(s, a)) && ft_postwork(&l, a, ms))
+	{
 		return (*ms);
-	else if ((l = ft_pars_param_mpons(s, a)) && ft_postwork(l, a, ms))
-		return (*ms);
+	}
 	/*
 	if (l)
 		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
 		l->m, l->p, l->o, l->nol, l->s, l->i1, l->i2, l->f, l->c);
 	*/
-	return (0);
+	return (NULL);
 }

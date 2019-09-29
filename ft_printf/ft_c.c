@@ -6,12 +6,13 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 20:49:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 15:07:59 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 20:39:24 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
+#include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include "ft_printf.h"
@@ -20,20 +21,17 @@ int		ft_c(t_pf *l, va_list a, char **ms)
 {
 	char c;
 
-	if (l->p || l->s || l->o || l->s || l->i2 || l->f || l->i1 < 0)
+	if (l->p || l->s || l->o || l->s || l->i2 || l->f || l->i1 < 0 || l->point > 1)
 		return (0);
 	c = va_arg(a, int);
-	if (l->m)
-	{
-		*ms = ft_stradd(*ms, c, 1);
-		if (l->i1 >= 1)
-			*ms = ft_stradd(*ms, ' ', l->i1 - 1);
-	}
-	else
-	{
-		if (l->i1 >= 1)
-			*ms = ft_stradd(*ms, ' ', l->i1 - 1);
-		*ms = ft_stradd(*ms, c, 1);
-	}
-	return (1);
+
+	ms += 0;
+	l->i1 += (l->i1 == 0 ? 1 : 0);
+
+	if (((l->m) && (*ms = ft_stradd(*ms, c, 1)) &&
+	(*ms = ft_stradd(*ms, ' ', l->i1 - 1))) ||
+	(!(l->m) && ((*ms = ft_stradd(*ms, ' ', l->i1 - 1)) &&
+	(*ms = ft_stradd(*ms, c, 1)))))
+		return (1);
+	return (0);
 }
