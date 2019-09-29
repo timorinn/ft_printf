@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_stradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/29 11:05:48 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 14:28:19 by bford            ###   ########.fr       */
+/*   Created: 2019/09/29 14:14:46 by bford             #+#    #+#             */
+/*   Updated: 2019/09/29 14:43:41 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include "ft_printf.h"
+#include <stdio.h>
 
-int		ft_s(t_pf *l, va_list a, char **ms)
+#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
+
+char	*ft_stradd(char *ms, char c, int size)
 {
-	char	*s;
-	int		len;
+	char	*fresh;
+	char	*cp1;
+	char	*cp2;
 
-	if (l->p || l->s || l->o || l->s)
-		return (0);
-	s = va_arg(a, char *);
-	ms++;
-	len = ft_strlen(s);
-	return (1);
+	cp1 = ms;
+	if (!(fresh = ft_strnew(ft_strlen(ms) + size)))
+		return (NULL);
+	cp2 = fresh;
+	while (*ms)
+		*fresh++ = *ms++;
+	free(cp1);
+	while (size--)
+		*fresh++ = c;
+	return (cp2);
 }

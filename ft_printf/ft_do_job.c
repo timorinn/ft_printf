@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 13:16:43 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 15:00:41 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ t_pf	*ft_pars_param_spec(char **s, t_pf *l)
 
 t_pf	*ft_pars_param_flag(char **s, t_pf *l)
 {
-	l->f = (**s == 'h' && *(*s + 1) == 'h' ? 1 : 0);
+	l->f = (**s == 'h' && *(*s + 1) == 'h' && (*s)++ ? 1 : 0);
 	
-	l->f = (**s == 'l' && *(*s + 1) == 'l' ? 2 : 0);
+	l->f = (**s == 'l' && *(*s + 1) == 'l' && (*s)++ ? 2 : 0);
 	l->f = (**s == 'h' ? 3 : 0);
 	l->f = (**s == 'l' ? 4 : 0);
 	l->f = (**s == 'L' ? 5 : 0);
@@ -108,13 +108,11 @@ char	*ft_do_job(char **s, char **ms, va_list a)
 {
 	t_pf *l;
 
-	a++;
 	l = NULL;
 	if (*(++(*s)) == '%' && (*ms = ft_strjoinfree(*ms, "%", 1)))
 		return (*ms);
-	else if (!(l = ft_pars_param_mpons(s, a)) && ft_postwork(l, a, &ms))
-		return (0);
-
+	else if ((l = ft_pars_param_mpons(s, a)) && ft_postwork(l, a, ms))
+		return (*ms);
 	/*
 	if (l)
 		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
