@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 22:06:20 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 13:07:03 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,35 @@
 int		main(void)
 {
 
-	//printf("%c\n", 'a');
+	ft_printf("%++---00 d\n");
 	
-	   printf("|%c|\n", 'a');
+	// MY C
+	/*
+	   printf("|||%c|\n", 'a');
 	ft_printf("|%c|\n", 'a');
 	   printf("|%.c|\n", 'a');
-	ft_printf("|%.c|\n", 'a');
+	ft_printf("|%..c|\n", 'a');
 	   printf("|%5c|\n", 'a');
 	ft_printf("|%5c|\n", 'a');
-	   printf("|%10c|\n", 'a');
-	ft_printf("|%10c|\n", 'a');
+	   printf("|%10.c|\n", 'a');
+	ft_printf("|%10.c|\n", 'a');
+	   printf("|%10c|\n", 48);
+	ft_printf("|%10c|\n", 48);
+	   printf("|%*c|\n", 12, 48);
+	ft_printf("|%*c|\n", 12, 48);
+	   printf("|%-*c|\n", 12, 48);
+	ft_printf("|%-*c|\n", 12, 48);
+	*/
+
+	// MY S
+	/*
+	   printf("%10.s\n", "str");
+	ft_printf("%s\n", "str");
+	   printf("%10.2s\n", "str");
+	ft_printf("%s\n", "str");
+	   printf("%10.5s\n", "str");
+	ft_printf("%s\n", "str");
+	*/
 	
 	//ft_printf("%dd\n");
 	//printf("%%da\n");

@@ -6,12 +6,13 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/28 22:00:30 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 13:16:43 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h> // D E L
 
+#include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include "ft_printf.h"
@@ -49,15 +50,16 @@ t_pf	*ft_pars_param_itwo(char **s, va_list a, t_pf *l)
 {
 	int n;
 
-	if (!(n = 0) && **s == '.' && (*s)++)
+	if (!(n = 0) && **s == '.' && (*s)++ && (l->point = 1))
 	{
-		if (**s == '*' && (*s)++)
+		if (**s == '*' && (*s)++ && (l->i2was = 1))
 			n += va_arg(a, int);
 		else
 			while (**s >= '0' && **s <= '9')
 			{
 				n = n * 10 + **s - '0';
 				(*s)++;
+				l->i2was = 1;
 			}
 		l->i2 += n;
 	}
@@ -85,7 +87,10 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 	t_pf	*l;
 
 	if (!(l = ft_lstnew_pf()))
+	{
+		free (l);
 		return (NULL);
+	}
 	while (**s && (**s == '-' || **s == '+' || **s == '-' || **s == '#' ||
 	**s == '0' || **s == ' '))
 	{
@@ -99,23 +104,21 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 	return (ft_pars_param_ione(s, a, l));
 }
 
-int		ft_do_job(char **s, va_list a)
+char	*ft_do_job(char **s, char **ms, va_list a)
 {
 	t_pf *l;
 
+	a++;
 	l = NULL;
-	if (*(++(*s)) == '%' && ++(*s))
-		write(1, "%", 1);
-	else if ((l = ft_pars_param_mpons(s, a)))
-	{
-		ft_postwork(l, a);
-	}
-	else
-		return (-1);
+	if (*(++(*s)) == '%' && (*ms = ft_strjoinfree(*ms, "%", 1)))
+		return (*ms);
+	else if (!(l = ft_pars_param_mpons(s, a)) && ft_postwork(l, a, &ms))
+		return (0);
+
 	/*
 	if (l)
 		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
 		l->m, l->p, l->o, l->nol, l->s, l->i1, l->i2, l->f, l->c);
 	*/
-	return (1);
+	return (0);
 }
