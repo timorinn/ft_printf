@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 14:14:46 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 20:36:28 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 21:26:22 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_stradd(char *ms, char c, int size)
 	while (*ms)
 		*fresh++ = *ms++;
 	ft_strdel(&cp1);
-	while (size--)
+	while (size-- > 0)
 		*fresh++ = c;
 	return (cp2);
 }

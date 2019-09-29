@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 20:30:20 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 21:37:26 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,14 @@ t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
 {
 	int n;
 
-	if (!(n = 0) && **s == '*' && (*s)++)
+	if (!(n = 0) && **s == '*' && (*s)++ && (l->i1was = 1))
 		n += va_arg(a, int);
 	else
 		while (**s >= '0' && **s <= '9')
 		{
 			n = n * 10 + **s - '0';
 			(*s)++;
+			l->i1was = 1;
 		}
 	l->i1 += n;
 	return (ft_pars_param_itwo(s, a, l));

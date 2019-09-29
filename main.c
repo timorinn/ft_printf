@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 20:25:45 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 21:38:47 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		main(void)
 	ft_printf(" 1)|%c|\n", 'a');
 	   printf(" 2)|%.c|\n", 'a');
 	ft_printf(" 2)|%.c|\n", 'a');
-	ft_printf(" 2)|%..c|\n", 'a');
 	   printf(" 3)|%5c|\n", 'a');
 	ft_printf(" 3)|%5c|\n", 'a');
 	   printf(" 4)|%10.c|\n", 'a');
@@ -38,13 +37,33 @@ int		main(void)
 	
 	
 	
-	/*
+
 	// MY S
 	printf("\nMY S\n");
-	   printf("1)|%10.s|\n", "str");
 
-	   printf("2)|%10.2s|\n", "str");
-
+	   printf(" 1)|%5s|\n", "str");
+	ft_printf(" 1)|%5s|\n", "str");
+	   printf(" 2)|%.5s|\n", "str");
+	ft_printf(" 2)|%.5s|\n", "str");
+	   printf(" 3)|%.2s|\n", "str");
+	ft_printf(" 3)|%.2s|\n", "str");
+	   printf(" 4)|%.0s|\n", "str");
+	ft_printf(" 4)|%.0s|\n", "str");
+	   printf(" 5)|%-5s|\n", "str");
+	ft_printf(" 6)|%-5s|\n", "str");
+	   printf(" 7)|%5.s|\n", "str");
+	ft_printf(" 7)|%5.s|\n", "str");
+	   //printf(" 8)|%5..s|\n", "str");
+	ft_printf(" 8)|%5..s|\n", "str"); // JOPA
+	   printf(" 9)|%5s|\n", "str");
+	ft_printf(" 9)|%05s|\n", "str");
+	   printf("10)|%5.s|\n", "str");
+	ft_printf("10)|%5.s|\n", "str");
+	   //printf("11)|%0s|\n", "str");
+	ft_printf("11)|%0s|\n", "str"); // JOPA
+	   printf("12)|%1s|\n", "str");
+	ft_printf("12)|%1s|\n", "str");
+	/*
 	   printf("3)|%10.5s|\n", "str");
 	   printf("4)|%.5s|\n", "str");
 	   printf("5)|%10.1s|\n", "str");

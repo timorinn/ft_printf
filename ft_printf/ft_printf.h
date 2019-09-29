@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 17:19:35 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 21:37:55 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	t_pr
 	int			s;
 	int			nol;
 	int			i1;
+	int			i1was;
 	int			point;
 	int			i2;
 	int			i2was;
