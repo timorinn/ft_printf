@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 21:31:17 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 22:00:21 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ int		ft_printf(char *s, ...)
 		if (*s == '%' && !(ft_do_job(&s, &ms, a)) && ft_strdel(&ms))
 		{
 			printf("JOPA!\n");
-			return (0);
+			return (1);
 		}
 		else if (*s != '%' && !(ms = ft_strsym(&ms, *s)))
 		{
 			printf("J O P A!\n");
-			return (0);
+			return (1);
 		}
 		else
 			s++;
 	ft_putstr(ms);
 	ft_strdel(&ms);
 	va_end(a);
-	return (1);
+	return (0);
 }

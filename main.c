@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 21:38:47 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/29 21:57:22 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		main(void)
 {
 
 	// MY C
+	   printf(" 0)||\n");
+	ft_printf(" 0)||\n");
 	
 	   printf(" 1)|%c|\n", 'a');
 	ft_printf(" 1)|%c|\n", 'a');
@@ -63,6 +65,9 @@ int		main(void)
 	ft_printf("11)|%0s|\n", "str"); // JOPA
 	   printf("12)|%1s|\n", "str");
 	ft_printf("12)|%1s|\n", "str");
+
+
+
 	/*
 	   printf("3)|%10.5s|\n", "str");
 	   printf("4)|%.5s|\n", "str");

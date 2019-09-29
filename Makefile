@@ -6,7 +6,7 @@
 #    By: bford <bford@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 11:34:46 by bford             #+#    #+#              #
-#    Updated: 2019/09/29 20:08:34 by bford            ###   ########.fr        #
+#    Updated: 2019/09/29 21:54:25 by bford            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,12 @@ FLAGS =		-Wall -Werror -Wextra
 
 OBJECTS =	$(SOURCES:.c=.o)
 
-NAME =		libft.a
+NAME =		libftprintf.a
 
-all:		$(NAME)
-
-$(NAME):	$(OBJECTS)
-			gcc -Wall -Wextra -Werror -c $(SOURCES)
-			ar rcs $(NAME) $(OBJECTS)
+all:		
+			gcc $(FLAGS) -c $(LIBFT)/*.c
+			gcc $(FLAGS) -c -I$(LIBFT) $(FT_PRINTF)/*.c
+			ar rcs $(NAME) *.o
 			ranlib $(NAME)
 
 clean:		
@@ -39,7 +38,7 @@ norm:
 
 exe:
 			gcc $(FLAGS) -c $(LIBFT)/*.c
-			gcc $(FLAGS) -c -I$(LIBFT) $(FT_PRINTF)/*.c
+			gcc $(FLAGS) -c -I $(LIBFT) $(FT_PRINTF)/*.c
 			gcc $(FLAGS) -c -I $(FT_PRINTF) -I $(LIBFT) main.c
 			gcc $(FLAGS) *.o
 			rm *.o
