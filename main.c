@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 18:56:30 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 20:42:36 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,16 @@
 int		main(void)
 {
 	//printf("|%06hd|\n", (short)(12345555));
+	
 	printf("|%hhd|\n", 55555);
-	ft_printf("%hhd\n", 55555);
+	ft_printf("|%hhd|\n", 55555);
+	printf("|%lld|\n", 55555);
+	ft_printf("|%lld|\n", 55555);
+	printf("|%hd|\n", 55555);
+	ft_printf("|%hd|\n", 55555);
+	printf("|%ld|\n", 55555);
+	ft_printf("|%ld|\n", 55555);
+
 	/*
 	printf("MY_C\n");
 	   printf("");
