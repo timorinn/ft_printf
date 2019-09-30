@@ -6,14 +6,14 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 17:01:40 by bford             #+#    #+#             */
-/*   Updated: 2019/09/27 19:31:03 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 12:41:19 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putstr(char const *s)
+void	ft_putstr(const char *s)
 {
 	write(1, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 21:57:22 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 16:52:46 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 int		main(void)
 {
 
-	// MY C
-	   printf(" 0)||\n");
-	ft_printf(" 0)||\n");
-	
+	printf("DDD === |%hd|\n", (short)11111145);
+
+	/*
+	printf("MY_C\n");
+	   printf("");
+	ft_printf("");
 	   printf(" 1)|%c|\n", 'a');
 	ft_printf(" 1)|%c|\n", 'a');
 	   printf(" 2)|%.c|\n", 'a');
@@ -36,11 +38,7 @@ int		main(void)
 	ft_printf(" 6)|%*c|\n", 12, 48);
 	   printf(" 7)|%-*c|\n", 12, 48);
 	ft_printf(" 7)|%-*c|\n", 12, 48);
-	
-	
-	
 
-	// MY S
 	printf("\nMY S\n");
 
 	   printf(" 1)|%5s|\n", "str");
@@ -58,14 +56,16 @@ int		main(void)
 	   //printf(" 8)|%5..s|\n", "str");
 	ft_printf(" 8)|%5..s|\n", "str"); // JOPA
 	   printf(" 9)|%5s|\n", "str");
-	ft_printf(" 9)|%05s|\n", "str");
+	ft_printf(" 9)|%5s|\n", "str");
 	   printf("10)|%5.s|\n", "str");
 	ft_printf("10)|%5.s|\n", "str");
 	   //printf("11)|%0s|\n", "str");
 	ft_printf("11)|%0s|\n", "str"); // JOPA
 	   printf("12)|%1s|\n", "str");
 	ft_printf("12)|%1s|\n", "str");
-
+	   printf("13)|%*s|\n", 0, "str");
+	ft_printf("13)|%*s|\n", 0, "str");
+	*/
 
 
 	/*

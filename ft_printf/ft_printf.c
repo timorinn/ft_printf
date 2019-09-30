@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 22:00:21 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 13:19:45 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,37 @@ int		ft_printf(char *s, ...)
 {
 	va_list	a;
 	char	*ms;
+	int		str_len;
 
+	str_len = 0;
 	ms = NULL;
 	va_start(a, s);
 	while (*s)
-		if (*s == '%' && !(ft_do_job(&s, &ms, a)) && ft_strdel(&ms))
+	{
+		if (*s == '%')
 		{
-			printf("JOPA!\n");
-			return (1);
+			if (!ft_do_job(&s, &ms, a))
+			{
+				printf("J O P A!\n");
+				if (ms)
+					ft_strdel(&ms);
+				return (-1);
+			}
+			continue;
 		}
 		else if (*s != '%' && !(ms = ft_strsym(&ms, *s)))
 		{
 			printf("J O P A!\n");
-			return (1);
+			return (-1);
 		}
-		else
-			s++;
-	ft_putstr(ms);
-	ft_strdel(&ms);
+		s++;
+	}
+	if (ms)
+	{
+		str_len = ft_strlen(ms);
+		ft_putstr(ms);
+		ft_strdel(&ms);
+	}
 	va_end(a);
-	return (0);
+	return (str_len);
 }

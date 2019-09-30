@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
+/*   ft_clearlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 17:09:20 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 12:41:40 by bford            ###   ########.fr       */
+/*   Created: 2019/09/30 16:44:26 by bford             #+#    #+#             */
+/*   Updated: 2019/09/30 16:50:05 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-#include "libft.h"
-#include <string.h>
+#include "ft_printf.h"
 #include <stdlib.h>
 
-char	*ft_strjoinfree(char *s1, const char *s2, int size)
+void	ft_clearlist(t_pf **l)
 {
-	char *fresh;
-	char *copy;
-	char *copy2;
-	int len;
-
-	len = (s1 ? ft_strlen(s1) : 0);
-	if (!s2 || size < 0 ||
-	!(fresh = ft_strnew(len + size)))
-		return (NULL);
-	copy = fresh;
-	copy2 = s1;
-	while (len--)
-		*fresh++ = *s1++;
-	ft_strdel(&copy2);
-	while (*s2 && size--)
-		*fresh++ = *s2++;
-	return (copy);
+	(*l)->p = 0;
+	(*l)->m = 0;
+	(*l)->o = 0;
+	(*l)->s = 0;
+	(*l)->nol = 0;
+	(*l)->i1 = 0;
+	(*l)->i1was = 0;
+	(*l)->point = 0;
+	(*l)->i2 = 0;
+	(*l)->i2was = 0;
+	(*l)->f = 0;
+	(*l)->c = 0;
+	free(*l);
 }

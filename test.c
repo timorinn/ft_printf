@@ -6,15 +6,25 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:19:15 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 11:11:07 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 16:32:51 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdarg.h>
 
+void f(void)
+{
+	static int i;
+	printf("ii = %d\n", i);
+	if (!i)
+		i = 0;
+	i++;
+	printf("i = %d\n", i);
+}
+
 int main(void)
 {
-	printf("%s\n", "str");
+	f(); f();
 	return (0);
 }

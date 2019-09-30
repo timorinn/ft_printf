@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
+/*   ft_pr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 17:09:20 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 12:41:40 by bford            ###   ########.fr       */
+/*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
+/*   Updated: 2019/09/30 13:27:10 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-#include "libft.h"
-#include <string.h>
-#include <stdlib.h>
+#include "ft_printf.h"
 
-char	*ft_strjoinfree(char *s1, const char *s2, int size)
+int		ft_pr(t_pf *l, char **ms)
 {
-	char *fresh;
-	char *copy;
-	char *copy2;
-	int len;
-
-	len = (s1 ? ft_strlen(s1) : 0);
-	if (!s2 || size < 0 ||
-	!(fresh = ft_strnew(len + size)))
-		return (NULL);
-	copy = fresh;
-	copy2 = s1;
-	while (len--)
-		*fresh++ = *s1++;
-	ft_strdel(&copy2);
-	while (*s2 && size--)
-		*fresh++ = *s2++;
-	return (copy);
+	l->i1 = (l->i1 <= 0 ? 1 : l->i1);
+	if (((l->m) && (*ms = ft_stradd(*ms, '%', 1)) &&
+	(*ms = ft_stradd(*ms, ' ', l->i1 - 1))) ||
+	(!(l->m) && ((*ms = ft_stradd(*ms, ' ', l->i1 - 1)) &&
+	(*ms = ft_stradd(*ms, '%', 1)))))
+		return (1);
+	return (0);
 }

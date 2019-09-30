@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 21:37:26 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 16:50:17 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_pf	*ft_pars_param_spec(char **s, t_pf *l)
 	l->c += (**s == 'X' ? 'X' : 0);
 	l->c += (**s == 'o' ? 'o' : 0);
 	l->c += (**s == 'f' ? 'f' : 0);
+	l->c += (**s == '%' ? '%' : 0);
 	if (l->c)
 		(*s)++;
 	return (l);
@@ -108,23 +109,8 @@ char	*ft_do_job(char **s, char **ms, va_list a)
 	t_pf *l;
 	
 	l = NULL;
-	if (*(++(*s)) == '%')
-	{
-		if ((*ms = ft_strsym(ms, '%')))
-		{
-			printf("{1}\n");
-			return (*ms);
-			printf("{2}\n");
-		}
-	}
-	else if ((l = ft_pars_param_mpons(s, a)) && ft_postwork(&l, a, ms))
-	{
+	(*s)++;
+	if ((l = ft_pars_param_mpons(s, a))  && ft_postwork(&l, a, ms))
 		return (*ms);
-	}
-	/*
-	if (l)
-		printf("\nPARAMS_OF_LIST 4\nminus = %d  plus = %d\noct = %d  nol = %d  space = %d\nint1 = %d  int2 = %d\nl->f = %d  l->c = %c\n", 
-		l->m, l->p, l->o, l->nol, l->s, l->i1, l->i2, l->f, l->c);
-	*/
 	return (NULL);
 }

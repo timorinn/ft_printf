@@ -6,7 +6,7 @@
 #    By: bford <bford@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 11:34:46 by bford             #+#    #+#              #
-#    Updated: 2019/09/29 21:54:25 by bford            ###   ########.fr        #
+#    Updated: 2019/09/30 16:10:21 by bford            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,5 +43,14 @@ exe:
 			gcc $(FLAGS) *.o
 			rm *.o
 			./a.out
+
+ex:
+			gcc -c $(LIBFT)/*.c
+			gcc -c -I $(LIBFT) $(FT_PRINTF)/*.c
+			gcc -c -I $(FT_PRINTF) -I $(LIBFT) main.c
+			gcc *.o
+			rm *.o
+			./a.out
+
 push:
 			git add -A && git commit -ma && git push

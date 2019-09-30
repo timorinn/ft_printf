@@ -6,9 +6,11 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 11:05:48 by bford             #+#    #+#             */
-/*   Updated: 2019/09/29 21:35:48 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 16:28:21 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -18,25 +20,11 @@
 int		ft_s(t_pf *l, va_list a, char **ms)
 {
 	char	*s;
-	int		len;
 	
-	if (l->p || l->s || l->o || l->s || l->f || l->i1 < 1)
+	if (l->p || l->s || l->o || l->s || l->f || l->nol)
 		return (0);
 	s = va_arg(a, char *);
-	len = (l->point && (int)ft_strlen(s) > l->i2 ? l->i2 : ft_strlen(s));
-	if (l->m)
-	{
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
-			return (0);
-		if (!(*ms = ft_stradd(*ms, ' ', l->i1 - len)))
-			return (0);
-	}
-	else if (!l->m)
-	{
-		if (!(*ms = ft_stradd(*ms, ' ', l->i1 - len)))
-			return (0);
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
-			return (0);
-	}
-	return (1);
+	if (!s)
+		return (ft_s2(l, "(null)", ms));
+	return(ft_s2(l, s, ms));
 }
