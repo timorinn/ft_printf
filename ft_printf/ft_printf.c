@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 13:19:45 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 17:27:12 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_printf(char *s, ...)
 			}
 			continue;
 		}
-		else if (*s != '%' && !(ms = ft_strsym(&ms, *s)))
+		else if (*s != '%' && /*!(ms = ft_strsym(&ms, *s)))*/ !(ms = ft_stradd(ms, *s, 1)))
 		{
 			printf("J O P A!\n");
 			return (-1);
