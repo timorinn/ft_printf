@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s2.c                                            :+:      :+:    :+:   */
+/*   ft_d.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 12:31:08 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 18:27:19 by bford            ###   ########.fr       */
+/*   Created: 2019/09/30 18:35:26 by bford             #+#    #+#             */
+/*   Updated: 2019/09/30 18:57:05 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
 #include "ft_printf.h"
+#include <stdarg.h>
 
-int		ft_s2(t_pf *l, char *s, char **ms)
+int		ft_d(t_pf *l, va_list a, char **ms)
 {
-	int len;
+	unsigned long long	num;
 
-	len = (l->point && (int)ft_strlen(s) > l->i2 ? l->i2 : ft_strlen(s));
-	if (l->m)
-	{
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
-			return (0);
-		if (l->i1was && l->i1 >= 0 && !(*ms = ft_stradd(*ms, ' ', l->i1 - len)))
-			return (0);
-	}
-	else if (!l->m)
-	{
-		if (l->i1was && l->i1 >= 0 && !(*ms = ft_stradd(*ms, ' ', l->i1 - len)))
-			return (0);
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
-			return (0);
-	}
+	printf("{ 1 }\n");
+	if (l->s && l->p)
+		l->s = 0;
+	if (l->nol && l->m)
+		l->nol = 0;
+	if (l->o)
+		return (0);
+	if (l->f == 1)
+		num = (unsigned long long)((unsigned char)(va_arg(a, int)));
+	printf("NUM = %lld\n", num);
+	a+=0;
+	ms+=0;
 	return (1);
 }

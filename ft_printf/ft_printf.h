@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 16:49:10 by bford            ###   ########.fr       */
+/*   Updated: 2019/09/30 18:36:04 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		ft_pr(t_pf *l, char **ms);
 int		ft_c(t_pf *l, va_list a, char **ms);
 int		ft_s(t_pf *l, va_list a, char **ms);
 int		ft_s2(t_pf *l, char *s, char **ms);
+int		ft_d(t_pf *l, va_list a, char **ms);
 void	ft_clearlist(t_pf **l);
 /*
 int		ft_p(t_pf *l, va_list a);
