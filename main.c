@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 18:23:51 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 21:51:11 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 int		main(void)
 {
-	ft_printf("|%5d|\n", -42);
-	
+	//ft_printf("|% +6d|\n", 42424);
+	printf(" num = %d\n", ft_printf("%05d", 42));
+	printf(" num = %d\n", printf("%05d", 42));
 	//   printf("|%  010d|\n", -14);
 	//ft_printf("|%+10d|\n", -14);
 	//ft_printf("%c\n", NULL);
