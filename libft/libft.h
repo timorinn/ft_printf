@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:10:55 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 17:18:21 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 12:20:17 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_strnew(size_t size);
 char	*ft_strjoinfree(char *s1, const char *s2, int size);
-char	*ft_stradd(char *s, char c, int size);
+char	*ft_stradd(char **ms, char c, int size);
 char	*ft_strdup(char *src);
 int		ft_strdel(char **as);
 char	*ft_strsym(char **s, char c);

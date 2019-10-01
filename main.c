@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 20:42:36 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 14:20:11 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 
 int		main(void)
 {
-	//printf("|%06hd|\n", (short)(12345555));
+	//   printf("|%  010d|\n", -14);
+	//ft_printf("|%+10d|\n", -14);
+	ft_printf("%c\n", NULL);
+	printf("a%ca\n", NULL);
+	/*
+	printf("|% .5d|\n", 14);
+	printf("|%011d|\n", 14);
 	
 	printf("|%hhd|\n", 55555);
 	ft_printf("|%hhd|\n", 55555);
@@ -27,7 +33,7 @@ int		main(void)
 	ft_printf("|%hd|\n", 55555);
 	printf("|%ld|\n", 55555);
 	ft_printf("|%ld|\n", 55555);
-
+	*/
 	/*
 	printf("MY_C\n");
 	   printf("");
@@ -48,7 +54,6 @@ int		main(void)
 	ft_printf(" 7)|%-*c|\n", 12, 48);
 
 	printf("\nMY S\n");
-
 	   printf(" 1)|%5s|\n", "str");
 	ft_printf(" 1)|%5s|\n", "str");
 	   printf(" 2)|%.5s|\n", "str");
@@ -71,7 +76,7 @@ int		main(void)
 	ft_printf("11)|%0s|\n", "str"); // JOPA
 	   printf("12)|%1s|\n", "str");
 	ft_printf("12)|%1s|\n", "str");
-
+	
 	   printf("13)|%*s|\n", 0, "str");
 	ft_printf("13)|%*s|\n", 0, "str");
 	*/

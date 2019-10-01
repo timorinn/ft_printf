@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 14:14:46 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 17:32:23 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 14:14:07 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,25 @@
 #include <string.h>
 #include <stdlib.h>
 
-char	*ft_stradd(char *ms, char c, int size)
+char	*ft_stradd(char **ms, char c, int size)
 {
-	char	*fresh;
-	char	*cp1;
-	char	*cp2;
 	int		len;
+	char	*copy;
+	char	*copy2;
 
-	len = (ms ? ft_strlen(ms) : 0);
-	cp1 = ms;
-	if (!(fresh = ft_strnew(len + size)))
+	copy = *ms;
+	len = (*ms ? ft_strlen(*ms) : 0);
+	if (!(*ms = ft_strnew(len + size)))
+	{
+		ft_strdel(&copy);
 		return (NULL);
-	cp2 = fresh;
-	while (len--)
-		*fresh++ = *ms++;
-	ft_strdel(&cp1);
-	while (size-- > 0)
-		*fresh++ = c;
-	return (cp2);
+	}
+	copy2 = *ms;
+	while (copy && *copy)
+		*copy2++ = *copy++;
+	copy -= copy2 - (*ms);
+	ft_strdel(&copy);
+	while (size--)
+		*copy2++ = c;
+	return (*ms);
 }

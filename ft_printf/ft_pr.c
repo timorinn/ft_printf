@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 13:27:10 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 12:22:54 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 int		ft_pr(t_pf *l, char **ms)
 {
 	l->i1 = (l->i1 <= 0 ? 1 : l->i1);
-	if (((l->m) && (*ms = ft_stradd(*ms, '%', 1)) &&
-	(*ms = ft_stradd(*ms, ' ', l->i1 - 1))) ||
-	(!(l->m) && ((*ms = ft_stradd(*ms, ' ', l->i1 - 1)) &&
-	(*ms = ft_stradd(*ms, '%', 1)))))
+	if (((l->m) && (*ms = ft_stradd(ms, '%', 1)) &&
+	(*ms = ft_stradd(ms, ' ', l->i1 - 1))) ||
+	(!(l->m) && ((*ms = ft_stradd(ms, ' ', l->i1 - 1)) &&
+	(*ms = ft_stradd(ms, '%', 1)))))
 		return (1);
 	return (0);
 }

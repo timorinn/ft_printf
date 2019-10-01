@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s2.c                                            :+:      :+:    :+:   */
+/*   ft_d_only.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 12:31:08 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 12:31:11 by bford            ###   ########.fr       */
+/*   Created: 2019/10/01 10:42:59 by bford             #+#    #+#             */
+/*   Updated: 2019/10/01 13:29:55 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 #include "ft_printf.h"
 
-int		ft_s2(t_pf *l, char *s, char **ms)
+int		ft_d_only(t_pf *l, char **ms, long long d)
 {
-	int len;
+	int		sp_or_plus;
+	int		nol_or_min;
 
-	len = (l->point && (int)ft_strlen(s) > l->i2 ? l->i2 : ft_strlen(s));
-	if (l->m)
+	sp_or_plus = (l->p ? '+' : 0);
+	sp_or_plus = (l->s && !(l->p) ? ' ' : sp_or_plus);
+	nol_or_min = (l->m ? '-' : 0);
+	nol_or_min = (l->nol && !(l->m) ? '0' : nol_or_min);
+
+	if ((sp_or_plus == ' ' && d > -1) && (!(*ms = ft_stradd(ms, ' ', 1))))
+		return (0);
+	else if (sp_or_plus == '+' || d < 0)
 	{
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
-			return (0);
-		if (l->i1was && l->i1 >= 0 && l->i1 > len && !(*ms = ft_stradd(ms, ' ', l->i1 - len)))
-			return (0);
-	}
-	else if (!l->m)
-	{
-		if (l->i1was && l->i1 >= 0 && l->i1 > len && !(*ms = ft_stradd(ms, ' ', l->i1 - len)))
-			return (0);
-		if (!(*ms = ft_strjoinfree(*ms, s, len)))
+		if (d < 0)
+			sp_or_plus = '-';
+		if (!(*ms = ft_stradd(ms, sp_or_plus, 1)))
 			return (0);
 	}
 	return (1);
