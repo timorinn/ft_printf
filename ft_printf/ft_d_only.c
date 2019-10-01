@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 10:42:59 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 17:36:43 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 18:24:49 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int		ft_d_only(t_pf **l, long long d)
 		ft_many_write(sp_or_plus, 1, l);
 		(*l)->i1 -= 1;
 	}
-	return (ft_putnbr_int(d, l, nol_or_min));
+	return (ft_putnbr_int(d, l, sp_or_plus, nol_or_min));
 }

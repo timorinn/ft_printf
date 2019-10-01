@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 17:54:19 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 18:23:51 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,7 @@
 
 int		main(void)
 {
-	
-	  printf("%+06d\n", 123);
-	ft_printf("%+06d\n", 123);
-	ft_printf("|%+d|\n", 0);
-	ft_printf("|%+d|\n", 1);
-	ft_printf("|%+d|\n", 12);
-	ft_printf("|%-9d|\n", 123);
-	ft_printf("|%+d|\n", 1234);
-	
-	ft_printf("|%+d|\n", 12345);
-	
-	ft_printf("|%+d|\n", 123456);
-	ft_printf("|%+d|\n", 1234567);
-
-	ft_printf("|%+d|\n", 12345678);
-	ft_printf("|%+d|\n", 123456789);
-	ft_printf("|%+d|\n", 1234567891);
-	ft_printf("|%+d|\n", 1234567891);
+	ft_printf("|%5d|\n", -42);
 	
 	//   printf("|%  010d|\n", -14);
 	//ft_printf("|%+10d|\n", -14);
