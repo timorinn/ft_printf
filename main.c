@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 14:20:11 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 17:53:58 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,30 @@
 
 int		main(void)
 {
+	
+	  printf("%+06d\n", 123);
+	ft_printf("%+06d\n", 123);
+	ft_printf("|%+d|\n", 0);
+	ft_printf("|%+d|\n", 1);
+	ft_printf("|%+d|\n", 12);
+	ft_printf("|%+d|\n", 123);
+	ft_printf("|%+d|\n", 1234);
+	
+	ft_printf("|%+d|\n", 12345);
+	
+	ft_printf("|%+d|\n", 123456);
+	ft_printf("|%+d|\n", 1234567);
+
+	ft_printf("|%+d|\n", 12345678);
+	ft_printf("|%+d|\n", 123456789);
+	ft_printf("|%+d|\n", 1234567891);
+	ft_printf("|%+d|\n", 1234567891);
+	
 	//   printf("|%  010d|\n", -14);
 	//ft_printf("|%+10d|\n", -14);
-	ft_printf("%c\n", NULL);
-	printf("a%ca\n", NULL);
+	//ft_printf("%c\n", NULL);
+
+	
 	/*
 	printf("|% .5d|\n", 14);
 	printf("|%011d|\n", 14);
@@ -76,7 +96,6 @@ int		main(void)
 	ft_printf("11)|%0s|\n", "str"); // JOPA
 	   printf("12)|%1s|\n", "str");
 	ft_printf("12)|%1s|\n", "str");
-	
 	   printf("13)|%*s|\n", 0, "str");
 	ft_printf("13)|%*s|\n", 0, "str");
 	*/

@@ -6,7 +6,7 @@
 #    By: bford <bford@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 11:34:46 by bford             #+#    #+#              #
-#    Updated: 2019/09/30 16:10:21 by bford            ###   ########.fr        #
+#    Updated: 2019/10/01 16:26:25 by bford            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,3 +54,6 @@ ex:
 
 push:
 			git add -A && git commit -ma && git push
+
+va:
+			valgrind --leak-check=full ./a.out

@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 11:05:48 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 16:28:21 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 16:05:31 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 #include <stdarg.h>
 #include "ft_printf.h"
 
-int		ft_s(t_pf *l, va_list a, char **ms)
+int		ft_s(t_pf **l, va_list a)
 {
 	char	*s;
 	
-	if (l->p || l->s || l->o || l->s || l->f || l->nol)
+	if ((*l)->p || (*l)->s || (*l)->o || (*l)->s || (*l)->f || (*l)->nol)
 		return (0);
 	s = va_arg(a, char *);
 	if (!s)
-		return (ft_s2(l, "(null)", ms));
-	return(ft_s2(l, s, ms));
+		return (ft_s2(l, "(null)"));
+	return(ft_s2(l, s));
 }

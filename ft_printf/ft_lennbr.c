@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pr.c                                            :+:      :+:    :+:   */
+/*   ft_lennbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 16:23:54 by bford            ###   ########.fr       */
+/*   Created: 2019/10/01 17:13:32 by bford             #+#    #+#             */
+/*   Updated: 2019/10/01 17:17:27 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 #include "ft_printf.h"
 
-int		ft_pr(t_pf **l)
+int		ft_lennbr(long long d)
 {
-	t_pf	*lst;
+	int	len;
+	long long	copy;
 
-	lst = *l;
-	lst->i1 = (lst->i1 <= 0 ? 1 : lst->i1);
-	if ((lst->m && ft_many_write('%', 1, l) &&
-	ft_many_write(' ', lst->i1 - 1, l)) ||
-	(!(lst->m) && ft_many_write(' ', lst->i1 - 1, l) &&
-	ft_many_write('%', 1, l)))
-		return (1);
-	return (0);
+	copy = d;
+	len = 1;
+	while (copy /= 10)
+		len++;
+	return (len);
 }

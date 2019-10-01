@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pr.c                                            :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 16:23:54 by bford            ###   ########.fr       */
+/*   Created: 2019/10/01 17:38:12 by bford             #+#    #+#             */
+/*   Updated: 2019/10/01 17:53:53 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-#include "ft_printf.h"
-
-int		ft_pr(t_pf **l)
+long long	ft_power(int num, int power)
 {
-	t_pf	*lst;
+	long long	res;
 
-	lst = *l;
-	lst->i1 = (lst->i1 <= 0 ? 1 : lst->i1);
-	if ((lst->m && ft_many_write('%', 1, l) &&
-	ft_many_write(' ', lst->i1 - 1, l)) ||
-	(!(lst->m) && ft_many_write(' ', lst->i1 - 1, l) &&
-	ft_many_write('%', 1, l)))
-		return (1);
-	return (0);
+	res = num;
+	power--;
+	while (power-- > 0)
+		res *= num;
+	return (res);
 }

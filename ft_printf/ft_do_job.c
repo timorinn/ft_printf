@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 20:20:31 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/01 15:32:52 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,8 @@ t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
 	return (ft_pars_param_itwo(s, a, l));
 }
 
-t_pf	*ft_pars_param_mpons(char **s, va_list a)
+t_pf	*ft_pars_param_mpons(char **s, va_list a, t_pf *l)
 {
-	t_pf	*l;
-
-	if (!(l = ft_lstnew_pf()))
-		return (NULL);
 	while (**s && (**s == '-' || **s == '+' || **s == '-' || **s == '#' ||
 	**s == '0' || **s == ' '))
 	{
@@ -103,13 +99,10 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a)
 	return (ft_pars_param_ione(s, a, l));
 }
 
-char	*ft_do_job(char **s, char **ms, va_list a)
+int		ft_do_job(char **s, va_list a, t_pf *l)
 {
-	t_pf *l;
-	
-	l = NULL;
 	(*s)++;
-	if ((l = ft_pars_param_mpons(s, a))  && ft_postwork(&l, a, ms))
-		return (*ms);
-	return (NULL);
+	if ((l = ft_pars_param_mpons(s, a, l))  && ft_postwork(&l, a))
+		return (1);
+	return (0);
 }

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pr.c                                            :+:      :+:    :+:   */
+/*   ft_many_write.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 16:23:54 by bford            ###   ########.fr       */
+/*   Created: 2019/10/01 14:39:35 by bford             #+#    #+#             */
+/*   Updated: 2019/10/01 17:07:54 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "ft_printf.h"
+#include <unistd.h>
 
-int		ft_pr(t_pf **l)
+int		ft_many_write(char c, int z, t_pf **l)
 {
-	t_pf	*lst;
-
-	lst = *l;
-	lst->i1 = (lst->i1 <= 0 ? 1 : lst->i1);
-	if ((lst->m && ft_many_write('%', 1, l) &&
-	ft_many_write(' ', lst->i1 - 1, l)) ||
-	(!(lst->m) && ft_many_write(' ', lst->i1 - 1, l) &&
-	ft_many_write('%', 1, l)))
-		return (1);
-	return (0);
+	(*l)->all += z;
+	while (z-- > 0)
+		write(1, &c, 1);
+	return (1);
 }
