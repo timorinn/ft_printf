@@ -3,6 +3,7 @@
 		"cstdarg": "c",
 		"stdarg.h": "c",
 		"string.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"stdio.h": "c"
 	}
 }

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_int.c                                    :+:      :+:    :+:   */
+/*   ft_u.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 17:14:08 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 14:24:09 by bford            ###   ########.fr       */
+/*   Created: 2019/10/02 16:06:57 by bford             #+#    #+#             */
+/*   Updated: 2019/10/02 17:32:01 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
-int		ft_putnbr_int(long long d, t_pf **l, int len)
+int		ft_u(t_pf **l, va_list a)
 {
-	long long	i;
+	t_pf	*lst;
 
-	i = (d > 9 || d < -9 ? ft_power(10, len - 1) : 1);
-	if (d < 0 && len > 1)
-	{
-		ft_many_write((d / i) * (-1) + '0', 1, l);
-		d %= i;
-		i /= 10;
-	}
-	d = (d < 0 ? -d : d);
-	while (i)
-	{
-		ft_many_write(d / i + '0', 1, l);
-		d %= i;
-		i /= 10;
-	}
-	return (1);
+	lst = *l;
+	if ((lst->f == 0 && ft_u_func(l, (unsigned int)va_arg(a, unsigned int))) ||
+	(lst->f == 2 && ft_u_func(l, (unsigned long)va_arg(a, unsigned long))) ||
+	(lst->f == 4 &&
+	ft_u_func(l, (unsigned long long)va_arg(a, unsigned long long))))
+		return (1);
+	return (0);
 }

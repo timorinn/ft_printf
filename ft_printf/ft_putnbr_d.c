@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 17:38:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 17:13:22 by bford            ###   ########.fr       */
+/*   Created: 2019/10/02 17:18:57 by bford             #+#    #+#             */
+/*   Updated: 2019/10/02 17:23:47 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long long	ft_power(int num, int power)
-{
-	unsigned long long	res;
+#include <stdio.h>
+#include "ft_printf.h"
 
-	res = num;
-	power--;
-	while (power-- > 0)
-		res *= num;
-	return (res);
+int		ft_putnbr_d(long long d, t_pf **l, int len)
+{
+	long long	i;
+
+	i = (d > 9 || d < -9 ? (long long)ft_power(10, len - 1) : 1);
+	if (d < 0 && len > 1)
+	{
+		ft_many_write((d / i) * (-1) + '0', 1, l);
+		d %= i;
+		i /= 10;
+	}
+	d = (d < 0 ? -d : d);
+	while (i)
+	{
+		ft_many_write(d / i + '0', 1, l);
+		d %= i;
+		i /= 10;
+	}
+	return (1);
 }

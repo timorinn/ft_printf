@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lennbr.c                                        :+:      :+:    :+:   */
+/*   ft_lennbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 17:13:32 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 13:05:00 by bford            ###   ########.fr       */
+/*   Created: 2019/10/02 17:10:29 by bford             #+#    #+#             */
+/*   Updated: 2019/10/02 17:11:53 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "ft_printf.h"
 
-int		ft_lennbr(long long d, long long c)
+int		ft_lennbr_u(unsigned long long d, unsigned long long c)
 {
-	long long len;
+	int	len;
 
 	len = 1;
 	while (d /= c)
