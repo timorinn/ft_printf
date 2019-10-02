@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 10:42:59 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 14:41:58 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 15:27:48 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int		ft_d_only(t_pf **l, long long d)
 	int		znak;
 	int		zap;
 	int		len;
+	int		i2copy;
 
+	i2copy = (*l)->i2;
 	len = ft_lennbr(d, 10);
 	znak = (d < 0 ? '-' : 0);
 	znak = (!znak && (*l)->p ? '+' : znak);
@@ -41,18 +43,15 @@ int		ft_d_only(t_pf **l, long long d)
 	else
 	{
 		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
-		//printf("i2 = %d\n", (*l)->i2);
 		(*l)->i2 = ((*l)->nol && !((*l)->i2) ? (*l)->i1 - len : (*l)->i2);
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
 		if (znak)
 			ft_many_write(znak, 1, l);
 		ft_many_write('0', (*l)->i2, l);;
-		if (d == 0 && ((*l)->i2 == 0 && (*l)->point))
-		{
-			ft_many_write(' ', 1, l);
-		}
-		else
+		if (!(d == 0 && !i2copy && (*l)->point))
 			ft_putnbr_int(d, l, len);
+		else if (d == 0 && (*l)->i1was && (*l)->point)
+			ft_many_write(' ', 1, l);
 	}
 	return (1);
 }

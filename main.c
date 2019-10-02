@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 14:43:16 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 15:25:43 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 
 int		main(void)
 {
-	printf(" num = %d\n", printf("%-5d", 35));
-	printf(" num = %d\n", ft_printf("%-5d", 35));
-	printf(" num = %d\n", printf("@moulitest: %5.1d %5.0d", 0, 0));
-	printf(" num = %d\n", ft_printf("@moulitest: %5.1d %5.0d", 0, 0));
+	printf(" num = %d\n", printf("%03.2d", 0));
+	printf(" num = %d\n", ft_printf("%03.2d", 0));
+	printf(" num = %d\n", printf("@moulitest: %.d %.0d", 0, 0));
+	printf(" num = %d\n", ft_printf("@moulitest: %.d %.0d", 0, 0));
+	printf(" num = %d\n", printf("@moulitest: %5.d %5.0d", 0, 0));
+	printf(" num = %d\n", ft_printf("@moulitest: %5.d %5.0d", 0, 0));
 	//ft_printf("|% +6d|\n", 42424);
 	//printf(" num = %d\n", printf("{%*s}", -5, "kek"));
 	//printf(" num = %d\n", ft_printf("{%*s}", -5, "kek"));
