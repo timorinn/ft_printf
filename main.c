@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 17:36:34 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 20:01:48 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 
 int		main(void)
 {
+	//printf("%d\n", (unsigned long long)(-34)
+	printf(" num = %d\n", printf("%x", 42));
+	printf(" num = %d\n", ft_printf("%x", 16));
+	printf(" num = %d\n", printf("% 05%"));
+	printf(" num = %d\n", ft_printf("% 05%"));
+	printf(" num = %d\n", printf("@moulitest: %#.o %#.0o", 0, 0));
+	printf(" num = %d\n", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
+	printf(" num = %d\n", printf("%#6o", 34));
+	printf(" num = %d\n", ft_printf("%#6o", 34));
 	/*
 	printf(" num = %d\n", printf("%03.2d", 0));
 	printf(" num = %d\n", ft_printf("%03.2d", 0));
@@ -25,8 +34,8 @@ int		main(void)
 	printf(" num = %d\n", printf("@moulitest: %5.d %5.0d", 0, 0));
 	printf(" num = %d\n", ft_printf("@moulitest: %5.d %5.0d", 0, 0));
 	*/
-	printf(" num = %d\n", printf("%+u", 4294967295));
-	printf(" num = %d\n", ft_printf("%+u", 4294967295));
+	//printf(" num = %d\n", printf("%+u", 4294967295));
+	///printf(" num = %d\n", ft_printf("%+u", 4294967295));
 	//ft_printf("|% +6d|\n", 42424);
 	//printf(" num = %d\n", printf("{%*s}", -5, "kek"));
 	//printf(" num = %d\n", ft_printf("{%*s}", -5, "kek"));

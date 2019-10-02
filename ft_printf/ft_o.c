@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pr.c                                            :+:      :+:    :+:   */
+/*   ft_o.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 19:32:26 by bford            ###   ########.fr       */
+/*   Created: 2019/10/02 18:19:36 by bford             #+#    #+#             */
+/*   Updated: 2019/10/02 19:06:53 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "ft_printf.h"
 
-int		ft_pr(t_pf **l)
+int		ft_o(t_pf **l, va_list a)
 {
 	t_pf	*lst;
-	char	zap;
 
-	zap = ((*l)->nol ? '0' : 1);
 	lst = *l;
-	lst->i1 = (lst->i1 <= 0 ? 1 : lst->i1);
-	if ((lst->m && ft_many_write('%', 1, l) &&
-	ft_many_write(zap, lst->i1 - 1, l)) ||
-	(!(lst->m) && ft_many_write(zap, lst->i1 - 1, l) &&
-	ft_many_write('%', 1, l)))
+	if (
+		(lst->f == 0 && ft_o_func(l, (unsigned int)va_arg(a, unsigned int))) ||
+	(lst->f == 1 && ft_o_func(l, (unsigned char)va_arg(a, unsigned int))) ||
+	(lst->f == 3 && ft_o_func(l, (unsigned short)va_arg(a, unsigned int)))
+	)
 		return (1);
 	return (0);
 }

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsym.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/29 19:24:12 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 17:30:48 by bford            ###   ########.fr       */
+/*   Created: 2019/10/02 19:53:48 by bford             #+#    #+#             */
+/*   Updated: 2019/10/02 20:01:33 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-#include "libft.h"
-#include <stdlib.h>
-
-char	*ft_strsym(char **s, char c)
+int		ft_putnbr_x(unsigned long long x, t_pf **l, int len)
 {
-	char *copy;
-	char *copy2;
-	char *s2;
-	char *ptr;
+	unsigned long long	i;
+	unsigned long long	res;
 
-	if (!(*s) && !(*s = ft_strnew(0)))
-		return (NULL);
-	ptr = *s;
-	copy2 = *s;
-	if (!(s2 = ft_strnew(ft_strlen(*s) + 1)))
-		return (NULL);
-	copy = s2;
-	while (*ptr)
-		*s2++ = *ptr++;
-	*s2 = c;
-	ft_strdel(&copy2);
-	return (copy);
+	i = (x > 15 ? (unsigned long long)ft_power(16, len - 1) : 1);
+	while (i)
+	{
+		res = x / i;
+		res = (res > 9 ? ft_many_write(res + 87, 1, l) : ft_many_write(res + '0', 1, l));
+		x %= i;
+		i /= 16;
+	}
+	return (1);
 }
