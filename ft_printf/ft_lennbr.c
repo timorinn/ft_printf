@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 17:13:32 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 17:17:27 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 13:05:00 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 #include "ft_printf.h"
 
-int		ft_lennbr(long long d)
+int		ft_lennbr(long long d, long long c)
 {
-	int	len;
-	long long	copy;
+	long long len;
 
-	copy = d;
 	len = 1;
-	while (copy /= 10)
+	while (d /= c)
 		len++;
 	return (len);
 }
