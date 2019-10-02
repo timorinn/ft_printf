@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 13:07:31 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 19:32:26 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 20:21:23 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		ft_pr(t_pf **l)
 	t_pf	*lst;
 	char	zap;
 
-	zap = ((*l)->nol ? '0' : 1);
 	lst = *l;
+	zap = (lst->nol ? '0' : ' ');
 	lst->i1 = (lst->i1 <= 0 ? 1 : lst->i1);
 	if ((lst->m && ft_many_write('%', 1, l) &&
 	ft_many_write(zap, lst->i1 - 1, l)) ||

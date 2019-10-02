@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 20:01:48 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/02 20:57:29 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@
 int		main(void)
 {
 	//printf("%d\n", (unsigned long long)(-34)
-	printf(" num = %d\n", printf("%x", 42));
-	printf(" num = %d\n", ft_printf("%x", 16));
-	printf(" num = %d\n", printf("% 05%"));
-	printf(" num = %d\n", ft_printf("% 05%"));
-	printf(" num = %d\n", printf("@moulitest: %#.o %#.0o", 0, 0));
-	printf(" num = %d\n", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
+	printf(" num = %d\n", printf("@moulitest: %#.x %#.0x", 0, 0));
+	printf(" num = %d\n", ft_printf("@moulitest: %#.x %#.0x", 0, 0));
+	printf(" num = %d\n", printf("@moulitest: %#.x %#.0x", 0, 0));
+	printf(" num = %d\n", ft_printf("@moulitest: %#.x %#.0x", 0, 0));
 	printf(" num = %d\n", printf("%#6o", 34));
 	printf(" num = %d\n", ft_printf("%#6o", 34));
 	/*
