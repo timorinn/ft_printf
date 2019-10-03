@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/03 16:34:37 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/03 19:56:17 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,21 @@ int		main(void)
 	int n;
 	char c;
 	int **i;
-	printf(" num1 = %d\n", printf("%p", 1234));
-	printf(" num1 = %d\n", ft_printf("%p", 1234));
+
+	printf(" num2 = %d\n", printf("{%f}{%lf}{%Lf}", 19.49, 1.42, 1.42l));
+	printf(" num2 = %d\n", ft_printf("{%f}{%lf}{%Lf}", 19.49, 1.42, 1.42l));
+	/*
+	printf(" num2 = %d\n", printf("%13.0f", -145.678));
+	printf(" num2 = %d\n", printf("%13.1f", -145.678));
+	printf(" num2 = %d\n", printf("%015f", 145.678));
+	printf(" num2 = %d\n", printf("%-15f", 145.678));
+	printf(" num2 = %d\n", printf("%013f", 145.678));
+	printf(" num2 = %d\n", printf("%0#13f", 145.678));
+	printf(" num2 = %d\n", printf("%#13f", 145.678));
+	printf(" num2 = %d\n", printf("%13f", 145.678));
+	
+	printf(" num2 = %d\n", printf("%-05%"));
+	printf(" num2 = %d\n", ft_printf("%-05%"));
 	printf(" num2 = %d\n", printf("my: %p", &c));
 	printf(" num2 = %d\n", ft_printf("my: %p", &c));
 	printf(" num3 = %d\n", printf("my: %p", &i));
@@ -31,6 +44,7 @@ int		main(void)
 	printf(" num = %d\n", ft_printf("@moulitest: %#.x %#.0x", 0, 0));
 	printf(" num = %d\n", printf("@moulitest: %#.x %#.0x", 0, 0));
 	printf(" num = %d\n", ft_printf("@moulitest: %#.x %#.0x", 0, 0));
+	*/
 	/*
 	printf(" num = %d\n", printf("%03.2d", 0));
 	printf(" num = %d\n", ft_printf("%03.2d", 0));
