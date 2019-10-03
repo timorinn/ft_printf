@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 20:45:53 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/03 15:06:56 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int					ft_putnbr_o(unsigned long long u, t_pf **l, int len);
 int					ft_xX(t_pf **l, va_list a);
 int					ft_putnbr_xX(unsigned long long x, t_pf **l, int len, char big);
 int					ft_xX_func(t_pf **l, unsigned long long x);
+
+int					ft_p(t_pf **l, va_list a);
+int					ft_p_func(t_pf **l, unsigned long long p);
 /*
 int		ft_p(t_pf *l, va_list a);
 int		ft_d(t_pf *l, va_list a);

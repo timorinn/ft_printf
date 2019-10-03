@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 20:49:45 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 11:18:09 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/03 15:44:23 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_c(t_pf **l, va_list a)
 	t_pf	*lst;
 
 	lst = *l;
-	if (lst->p || lst->o || lst->f || lst->point > 1)
+	if (lst->p || lst->f || lst->point > 1)
 		return (0);
 	c = va_arg(a, int);
 	lst->i1 += (lst->i1 == 0 ? 1 : 0);

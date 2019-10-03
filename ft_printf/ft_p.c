@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 12:10:55 by bford             #+#    #+#             */
-/*   Updated: 2019/10/03 15:36:01 by bford            ###   ########.fr       */
+/*   Created: 2019/10/03 15:02:17 by bford             #+#    #+#             */
+/*   Updated: 2019/10/03 15:14:33 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdio.h>
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf.h"
 
-int		ft_putstr(const char *s);
-size_t	ft_strlen(const char *s);
-char	*ft_strnew(size_t size);
-char	*ft_strjoinfree(char *s1, const char *s2, int size);
-char	*ft_stradd(char **ms, char c, int size);
-char	*ft_strdup(char *src);
-int		ft_strdel(char **as);
-#endif
+int		ft_p(t_pf **l, va_list a)
+{
+	t_pf	*lst;
+
+	lst = *l;
+	if (lst->p == 0 && ft_p_func(l, (unsigned int)va_arg(a, unsigned long long)))
+		return (1);
+	return (0);
+}
