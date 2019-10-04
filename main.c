@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 16:39:12 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 16:45:24 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		main(void)
 	printf(" num11 = %d\n", printf("{%08.3u}", 8375));
 	printf(" num11 = %d\n\n", ft_printf("{%08.3u}", 8375));
 
-	printf(" num12 = %d\n", printf("{%-5.0u}", 0));
-	printf(" num12 = %d\n\n", ft_printf("{%-5.0u}", 0));
+	printf(" num12 = %d\n", printf("%08.3x", 8375));
+	printf(" num12 = %d\n\n", ft_printf("%08.3x", 8375));
 	*/
 	//printf(" num2 = %d\n", printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
 	//printf(" num2 = %d\n", ft_printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
