@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 10:38:33 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 16:28:02 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,44 @@
 
 int		main(void)
 {
-	printf(" 1)|%c|\n", 'a');
-	ft_printf(" 2)|%c|\n", 'a');
-	   
-	//printf(" num1 = %d\n", printf("{%f}{%lf}{%Lf}", -1.42, -1.42, -1.42l));
-	//printf(" num1 = %d\n", ft_printf("{%f}{%lf}{%Lf}", -1.42, -1.42, -1.42l));
+	//printf(" 1)|%c|\n", 'a');
+	//ft_printf(" 2)|%c|\n", 'a');
+	printf(" num1 = %d\n", printf("%08.d", 8375));
+	printf(" num1 = %d\n\n", ft_printf("%08.d", 8375));
+
+	printf(" num2 = %d\n", printf("%08.0d", 8375));
+	printf(" num2 = %d\n\n", ft_printf("%08.0d", 8375));
+
+	printf(" num3 = %d\n", printf("%08.3d", 8375));
+	printf(" num3 = %d\n\n", ft_printf("%08.3d", 8375));
+
+	printf(" num4 = %d\n", printf("{%05.*d}", -1, 42));
+	printf(" num4 = %d\n\n", ft_printf("{%05.*d}", -1, 42));
+
+	printf(" num5 = %d\n", printf("{%05d}", 42));
+	printf(" num5 = %d\n\n", ft_printf("{%05d}", 42));
+
+	printf(" num6 = %d\n", printf("{%05d}", 42));
+	printf(" num6 = %d\n\n", ft_printf("{%05.*d}", -1, 42));
+
+	printf(" num7 = %d\n", printf("{%5d}", 42));
+	printf(" num7 = %d\n\n", ft_printf("{%5d}", 42));
+
+	printf(" num8 = %d\n", printf("%4.15d", 42));
+	printf(" num8 = %d\n\n", ft_printf("%4.15d", 42));
+
+	printf(" num9 = %d\n", printf("{%+5.i}", 0));
+	printf(" num9 = %d\n\n", ft_printf("{%+5.i}", 0));
+
+	printf(" num10 = %d\n", printf("{%03.2d}", 0));
+	printf(" num10 = %d\n\n", ft_printf("{%03.2d}", 0));
+
+	printf(" num11 = %d\n", printf("{%08.3u}", 8375));
+	printf(" num11 = %d\n\n", ft_printf("{%08.3u}", 8375));
+
+	printf(" num12 = %d\n", printf("{%08u}", 8375));
+	printf(" num12 = %d\n\n", ft_printf("{%08u}", 8375));
+	
 	//printf(" num2 = %d\n", printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
 	//printf(" num2 = %d\n", ft_printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
 	//printf(" num1 = %d\n", printf("%llu", 4999999999));
