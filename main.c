@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 10:12:30 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 10:22:15 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(void)
 	//printf(" num1 = %d\n", ft_printf("{%f}{%lf}{%Lf}", -1.42, -1.42, -1.42l));
 	//printf(" num2 = %d\n", printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
 	//printf(" num2 = %d\n", ft_printf("{%f}{%lf}{%Lf}", 1.426737, 1.42, 1.42l));
-	printf(" num1 = %d\n", printf("%llu", 4999999999));
+	//printf(" num1 = %d\n", printf("%llu", 4999999999));
 	printf(" num1 = %d\n", ft_printf("%llu", 4999999999));
 	printf(" num1 = %d\n", printf("{%f}{%lf}{%Lf}", 1444565444646.6465424242242, 1444565444646.6465424242242, 1444565444646.6465424242242l));
 	printf(" num1 = %d\n", ft_printf("{%f}{%lf}{%Lf}", 1444565444646.6465424242242, 1444565444646.6465424242242, 1444565444646.6465424242242l));
@@ -111,7 +111,7 @@ int		main(void)
 	ft_printf(" 6)|%-5s|\n", "str");
 	   printf(" 7)|%5.s|\n", "str");
 	ft_printf(" 7)|%5.s|\n", "str");
-	   printf(" 8)|%5..s|\n", "str");
+	   //printf(" 8)|%5..s|\n", "str");
 	ft_printf(" 8)|%5..s|\n", "str"); // JOPA
 	   printf(" 9)|%5s|\n", "str");
 	ft_printf(" 9)|%5s|\n", "str");
