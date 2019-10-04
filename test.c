@@ -6,25 +6,36 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:19:15 by bford             #+#    #+#             */
-/*   Updated: 2019/09/30 16:32:51 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 10:45:51 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdarg.h>
-
-void f(void)
+void f3(char *s)
 {
-	static int i;
-	printf("ii = %d\n", i);
-	if (!i)
-		i = 0;
-	i++;
-	printf("i = %d\n", i);
+	printf("F2 == %c\n", *s);
+	s++;
+}
+
+void f2(char *s)
+{
+	printf("F2 == %c\n", *s);
+	s++;
+	f3(s);
+}
+
+void f(char *s)
+{
+	printf("F2 == %c\n", *s);
+	s++;
+	f2(s);
 }
 
 int main(void)
 {
-	f(); f();
+	char s[6] = "KekEs";
+	f(s);
+	printf("BLYAT %c\n", *s);
 	return (0);
 }

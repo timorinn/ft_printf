@@ -6,14 +6,14 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 16:44:26 by bford             #+#    #+#             */
-/*   Updated: 2019/10/01 16:48:33 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 11:12:40 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdlib.h>
 
-void	ft_clearlist(t_pf **l)
+int		ft_clearlist(t_pf **l)
 {
 	if (l && *l)
 	{
@@ -33,4 +33,5 @@ void	ft_clearlist(t_pf **l)
 		free(*l);
 		*l = NULL;
 	}
+	return (1);
 }

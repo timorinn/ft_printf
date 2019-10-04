@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 09:05:45 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 11:13:26 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int					ft_u(t_pf **l, va_list a);
 int					ft_u_func(t_pf **l, unsigned long long u);
 int					ft_putnbr_d(long long d, t_pf **l, int len);
 int					ft_putnbr_u(unsigned long long d, t_pf **l, int len);
-void				ft_clearlist(t_pf **l);
+int					ft_clearlist(t_pf **l);
 int					ft_nollist(t_pf **l);
 int					ft_many_write(char c, int z, t_pf **l);
 int					ft_lennbr_d(long long d, long long c);
