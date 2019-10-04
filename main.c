@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 09:45:43 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 09:46:02 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int		main(void)
 	ft_printf(" 6)|%-5s|\n", "str");
 	   printf(" 7)|%5.s|\n", "str");
 	ft_printf(" 7)|%5.s|\n", "str");
-	   //printf(" 8)|%5..s|\n", "str");
+	   printf(" 8)|%5..s|\n", "str");
 	ft_printf(" 8)|%5..s|\n", "str"); // JOPA
 	   printf(" 9)|%5s|\n", "str");
 	ft_printf(" 9)|%5s|\n", "str");
