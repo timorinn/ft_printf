@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 09:38:35 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/04 09:45:43 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		main(void)
 	printf("|%ld|\n", 55555);
 	ft_printf("|%ld|\n", 55555);
 	*/
-	/*
+
 	printf("MY_C\n");
 	   printf("");
 	ft_printf("");
@@ -121,7 +121,7 @@ int		main(void)
 	ft_printf("12)|%1s|\n", "str");
 	   printf("13)|%*s|\n", 0, "str");
 	ft_printf("13)|%*s|\n", 0, "str");
-	*/
+
 
 	/*
 	   printf("3)|%10.5s|\n", "str");
