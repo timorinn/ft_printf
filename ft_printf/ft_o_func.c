@@ -6,9 +6,11 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 18:41:20 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 12:44:34 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/05 19:55:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 #include "ft_printf.h"
 
@@ -19,6 +21,7 @@ int		ft_o_func(t_pf **l, unsigned long long o)
 
 	i2copy = (*l)->i2;
 	len = (o == 0 && (*l)->point ? ft_lennbr_u(o, 8) - 1 : ft_lennbr_u(o, 8));
+	//printf("LEN == %d\n", len);
 	if ((*l)->i1 < 0 && ((*l)->i1 *= -1))
 		(*l)->m += 1;
 	(*l)->i1 = ((*l)->i1 - len < 0 ? len : (*l)->i1);
@@ -43,8 +46,8 @@ int		ft_o_func(t_pf **l, unsigned long long o)
 			(*l)->i2 -= len;
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
 		(*l)->o && o ? ft_many_write('0', 1, l): 0;
-		ft_many_write('0', (*l)->i2, l);
-		if (!(o == 0 && (*l)->point))
+		ft_many_write('0', (*l)->i2 - ((*l)->o > 0), l);
+		if (!(o == 0 && (*l)->point) || (*l)->o)
 			ft_putnbr_o(o, l, len);
 	}
 	return (1);

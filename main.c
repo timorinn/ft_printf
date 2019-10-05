@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 13:46:33 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/05 19:33:26 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,42 +17,65 @@
 
 int		main(void)
 {
-	/*
+	
 	printf(" num1 = %d\n", printf("{%f}", 1.0));
 	printf(" num1 = %d\n\n", ft_printf("{%f}", 1.0));
 
-	printf(" num2 = %d\n", printf("{%.f}", 23.00041));
-	printf(" num2 = %d\n\n", ft_printf("{%.f}", 23.00041));
+	printf(" num2 = %d\n", printf("{%f}", 573.924));
+	printf(" num2 = %d\n\n", ft_printf("{%f}", 573.924));
 
 	
-	printf(" num3 = %d\n", printf("{%f}", -7.00036));
-	printf(" num3 = %d\n\n", ft_printf("{%f}", -7.00036));
+	printf(" num3 = %d\n", printf("{%f}", 43.99));
+	printf(" num3 = %d\n\n", ft_printf("{%f}", 43.99));
 	
 	printf(" num4 = %d\n", printf("{%f}", -0.000001));
 	printf(" num4 = %d\n\n", ft_printf("{%f}", -0.000001));
 
-	printf(" num5 = %d\n", printf("{%.3f}", -0.00032));
-	printf(" num5 = %d\n\n", ft_printf("{%.3f}", -0.00032));
-	*/
-	printf(" num6 = %d\n", printf("{%f}", -7.00036));
-	printf(" num6 = %d\n\n", ft_printf("{%f}", -7.00036));
+	printf(" num5 = %d\n", printf("this %.f float", 1.5));
+	printf(" num5 = %d\n\n", ft_printf("this %.f float", 1.5));
+
+	printf(" num55 = %d\n", printf("this %.f float", 1.499));
+	printf(" num55 = %d\n\n", ft_printf("this %.f float", 1.499));
+
+	printf(" num6 = %d\n", printf("{%f}", 3.9999999));
+	printf(" num6 = %d\n\n", ft_printf("{%f}", 3.9999999));
 	
 	printf(" num7 = %d\n", printf("{%f}", 23.375094499));
 	printf(" num7 = %d\n\n", ft_printf("{%f}", 23.375094499));
+
+	printf(" num8 = %d\n", printf("{%f}", -5.9999999));
+	printf(" num8 = %d\n\n", ft_printf("{%f}", -5.9999999));
+
+	printf(" num9 = %d\n", printf("{%.0f}", -3.85));
+	printf(" num9 = %d\n\n", ft_printf("{%.0f}", -3.85));
+
+	printf(" num10 = %d\n", printf("this %.1f float", 1.5));
+	printf(" num10 = %d\n\n", ft_printf("this %.1f float", 1.5));
+
+	printf(" num11 = %d\n", printf("this %.1f float", 1.5));
+	printf(" num11 = %d\n\n", ft_printf("this %.1f float", 1.5));
 	
+	printf(" num12 = %d\n", printf("%#.0f", 7.4));
+	printf(" num12 = %d\n\n", ft_printf("%#.0f", 7.4));
+
+	printf(" num13 = %d\n", printf("{%5.0f}", -7.3));
+	printf(" num13 = %d\n\n", ft_printf("{%5.0f}", -7.3));
+
+	printf(" num14 = %d\n", printf("{%#-3o}", 0));
+	printf(" num14 = %d\n\n", ft_printf("{%#-3o}", 0));
+	
+	printf(" num15 = %d\n", printf("{%#3o}", 0));
+	printf(" num15 = %d\n\n", ft_printf("{%#3o}", 0));
+
+	printf(" num16 = %d\n", printf("%#6o", 2500));
+	printf(" num16 = %d\n\n", ft_printf("%#6o", 2500));
+	
+	printf(" num3 = %d\n", printf("%#.3o", 1));
+	printf(" num3 = %d\n\n", ft_printf("%#.3o", 1));
+
+	printf(" num4 = %d\n", printf("@moulitest: %#.o %#.0o", 0, 0));
+	printf(" num4 = %d\n\n", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
 	/*
-	printf(" num1 = %d\n", printf("%08.d", 8375));
-	printf(" num1 = %d\n\n", ft_printf("%08.d", 8375));
-
-	printf(" num2 = %d\n", printf("%08.0d", 8375));
-	printf(" num2 = %d\n\n", ft_printf("%08.0d", 8375));
-
-	printf(" num3 = %d\n", printf("%08.3d", 8375));
-	printf(" num3 = %d\n\n", ft_printf("%08.3d", 8375));
-
-	printf(" num4 = %d\n", printf("{%05.*d}", -1, 42));
-	printf(" num4 = %d\n\n", ft_printf("{%05.*d}", -1, 42));
-
 	printf(" num5 = %d\n", printf("{%05d}", 42));
 	printf(" num5 = %d\n\n", ft_printf("{%05d}", 42));
 
