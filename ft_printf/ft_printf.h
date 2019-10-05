@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 11:13:26 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/05 13:09:28 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int					ft_p_func(t_pf **l, unsigned long long p);
 int					ft_f(t_pf **l, va_list a);
 int					ft_f_func(t_pf **l, long double f);
 int					ft_putnbr_f(long long, t_pf **l, int second_len);
+int					ft_putnbr_second(long long d, t_pf **l, int len);
 /*
 int		ft_p(t_pf *l, va_list a);
 int		ft_d(t_pf *l, va_list a);

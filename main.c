@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 16:45:24 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/05 13:46:33 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,29 @@
 
 int		main(void)
 {
-	//printf(" 1)|%c|\n", 'a');
-	//ft_printf(" 2)|%c|\n", 'a');
+	/*
+	printf(" num1 = %d\n", printf("{%f}", 1.0));
+	printf(" num1 = %d\n\n", ft_printf("{%f}", 1.0));
+
+	printf(" num2 = %d\n", printf("{%.f}", 23.00041));
+	printf(" num2 = %d\n\n", ft_printf("{%.f}", 23.00041));
+
+	
+	printf(" num3 = %d\n", printf("{%f}", -7.00036));
+	printf(" num3 = %d\n\n", ft_printf("{%f}", -7.00036));
+	
+	printf(" num4 = %d\n", printf("{%f}", -0.000001));
+	printf(" num4 = %d\n\n", ft_printf("{%f}", -0.000001));
+
+	printf(" num5 = %d\n", printf("{%.3f}", -0.00032));
+	printf(" num5 = %d\n\n", ft_printf("{%.3f}", -0.00032));
+	*/
+	printf(" num6 = %d\n", printf("{%f}", -7.00036));
+	printf(" num6 = %d\n\n", ft_printf("{%f}", -7.00036));
+	
+	printf(" num7 = %d\n", printf("{%f}", 23.375094499));
+	printf(" num7 = %d\n\n", ft_printf("{%f}", 23.375094499));
+	
 	/*
 	printf(" num1 = %d\n", printf("%08.d", 8375));
 	printf(" num1 = %d\n\n", ft_printf("%08.d", 8375));
