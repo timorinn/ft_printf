@@ -6,15 +6,12 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 09:59:49 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 10:33:00 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> // DEL
-
 #include "libft.h"
 #include "ft_printf.h"
-#include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>

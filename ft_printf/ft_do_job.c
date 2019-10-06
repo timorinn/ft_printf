@@ -6,44 +6,51 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 10:00:02 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 11:20:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h> // D E L
 
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include "ft_printf.h"
 
-t_pf	*ft_pars_param_spec(char **s, t_pf *l)
+t_pf	*ft_pars_param_flag_spec(char **s, t_pf *l)
 {
 	char	c;
 
 	c = **s;
-	if (c == 'c' || c == 'd' || c == 'i' || c == 'i' || c == 's' ||
+	if (c == 'h' && (l->f = 3))
+		*s += (*(*s + 1) == 'h' && (l->f = 1) ? 1 : 0);
+	else if (c == 'l' && (l->f = 4))
+		*s += (*(*s + 1) == 'l' && (l->f = 2) ? 1 : 0);
+	else if (c == 'L')
+		l->f = 5;
+	if (l->f)
+		c = *(++(*s));
+	if ((c == 'c' || c == 'd' || c == 'i' || c == 's' ||
 	c == 'p' || c == 'u' || c == 'x' || c == 'X' || c == 'o' ||
-	c == 'f' || c == '%')
-	{
-		l->c = c;
-		(*s)++;
-	}
+	c == 'f' || c == '%') && (l->c = c))
+		++(*s);
 	return (l);
 }
-
+/*
 t_pf	*ft_pars_param_flag(char **s, t_pf *l)
 {
 	char	f;
 
 	f = **s;
-	if ((f == 'h' && *(*s + 1) == 'h' && (*s)++ && (l->f = 1)) ||
-	(f == 'l' && *(*s + 1) == 'l' && (*s)++ && (l->f = 2)) ||
-	(f == 'h' && (l->f = 3)) || (f == 'l' && (l->f = 4)) || (f == 'L' && (l->f = 5)))
+	if (f == 'h' && (l->f = 3))
+		*s += (*(*s + 1) == 'h' && (l->f = 1) ? 1 : 0);
+	else if (f == 'l' && (l->f = 4))
+		*s += (*(*s + 1) == 'l' && (l->f = 2) ? 1 : 0);
+	else if (f == 'L')
+		l->f = 5;
+	if (l->f)
 		(*s)++;
 	return (ft_pars_param_spec(s, l));
 }
-
+*/
 t_pf	*ft_pars_param_itwo(char **s, va_list a, t_pf *l)
 {
 	int n;
@@ -52,16 +59,15 @@ t_pf	*ft_pars_param_itwo(char **s, va_list a, t_pf *l)
 	{
 		if (**s == '*' && (*s)++ && (l->i2was = 1))
 			n += va_arg(a, int);
-		else
+		if (**s >= '0' && **s <= '9' && !(n = 0) && (l->i2was = 1))
 			while (**s >= '0' && **s <= '9')
 			{
 				n = n * 10 + **s - '0';
 				(*s)++;
-				l->i2was = 1;
 			}
 		l->i2 += n;
 	}
-	return (ft_pars_param_flag(s, l));
+	return (ft_pars_param_flag_spec(s, l));
 }
 
 t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
@@ -70,15 +76,12 @@ t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
 
 	if (!(n = 0) && **s == '*' && (*s)++ && (l->i1was = 1))
 		n += va_arg(a, int);
-	if (**s >= '0' && **s <= '9' && !(n = 0))
-	{
+	if (**s >= '0' && **s <= '9' && !(n = 0) && (l->i1was = 1))
 		while (**s >= '0' && **s <= '9')
 		{
 			n = n * 10 + **s - '0';
 			(*s)++;
-			l->i1was = 1;
 		}
-	}
 	l->i1 += n;
 	return (ft_pars_param_itwo(s, a, l));
 }
