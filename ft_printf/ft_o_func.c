@@ -6,49 +6,57 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 18:41:20 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 19:55:20 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 17:00:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "ft_printf.h"
+
+void	ft_o_no_minus(int i1, int len, t_pf **l, unsigned long long o)
+{
+	int		i2;
+
+	i2 = (*l)->i2;
+	if ((i2 < 0) || (!i2 && !(*l)->point && (*l)->nol))
+		i2 = (*l)->i1 - len;
+	else if (i2 < len)
+		i2 = 0;
+	else
+		i2 -= len;
+	ft_many_write(' ', i1 - i2 - len, l);
+	(*l)->o && o ? ft_many_write('0', 1, l) : 0;
+	ft_many_write('0', i2 - ((*l)->o > 0), l);
+	if (!(o == 0 && (*l)->point) || (*l)->o)
+		ft_putnbr_o(o, l, len);
+}
+
+void	ft_o_minus(int i1, int len, t_pf **l, unsigned long long o)
+{
+	int		i2;
+
+	i2 = (*l)->i2;
+	i2 = (i2 - len >= 0 ? i2 - len : 0);
+	ft_many_write('0', i2, l);
+	(*l)->o && o ? ft_many_write('0', 1, l) : 0;
+	if (!(o == 0 && (*l)->point))
+		ft_putnbr_o(o, l, len);
+	ft_many_write(' ', i1 - i2 - len, l);
+}
 
 int		ft_o_func(t_pf **l, unsigned long long o)
 {
 	int		len;
-	int		i2copy;
+	int		i1;
 
-	i2copy = (*l)->i2;
+	i1 = (*l)->i1;
 	len = (o == 0 && (*l)->point ? ft_lennbr_u(o, 8) - 1 : ft_lennbr_u(o, 8));
-	//printf("LEN == %d\n", len);
-	if ((*l)->i1 < 0 && ((*l)->i1 *= -1))
+	if (i1 < 0 && (i1 *= -1))
 		(*l)->m += 1;
-	(*l)->i1 = ((*l)->i1 - len < 0 ? len : (*l)->i1);
-	(*l)->i1 -= ((*l)->o && o ? 1 : 0);
-	
+	i1 = (i1 - len < 0 ? len : i1);
+	i1 -= ((*l)->o && o ? 1 : 0);
 	if ((*l)->m)
-	{
-		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
-		ft_many_write('0', (*l)->i2, l);
-		(*l)->o && o ? ft_many_write('0', 1, l) : 0;
-		if (!(o == 0 && (*l)->point))
-			ft_putnbr_o(o, l, len);
-		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
-	}
+		ft_o_minus(i1, len, l, o);
 	else
-	{
-		if (((*l)->i2 < 0) || ( !(*l)->i2 && !(*l)->point && (*l)->nol))
-			(*l)->i2 = (*l)->i1 - len;
-		else if ((*l)->i2 < len)
-			(*l)->i2 = 0;
-		else
-			(*l)->i2 -= len;
-		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
-		(*l)->o && o ? ft_many_write('0', 1, l): 0;
-		ft_many_write('0', (*l)->i2 - ((*l)->o > 0), l);
-		if (!(o == 0 && (*l)->point) || (*l)->o)
-			ft_putnbr_o(o, l, len);
-	}
+		ft_o_no_minus(i1, len, l, o);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 14:48:18 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 14:48:20 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:59:49 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		ft_putnbr_x(unsigned long long x, t_pf **l, int len, char big)
 	while (i)
 	{
 		res = x / i;
-		res = (res > 9 ? ft_many_write(res + big, 1, l) : ft_many_write(res + '0', 1, l));
+		res = (res > 9 ?
+		ft_many_write(res + big, 1, l) : ft_many_write(res + '0', 1, l));
 		x %= i;
 		i /= 16;
 	}

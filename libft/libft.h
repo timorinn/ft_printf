@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:10:55 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 10:36:09 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 15:16:16 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ char	*ft_stradd(char **ms, char c, int size);
 char	*ft_strdup(char *src);
 int		ft_strdel(char **as);
 char	*ft_strchr(const char *s, int c);
+int		ft_putstr_num(const char *s, int n);
 
 #endif

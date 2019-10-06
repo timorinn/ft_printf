@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_p.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 15:02:17 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 15:34:23 by bford            ###   ########.fr       */
+/*   Created: 2019/10/06 15:13:43 by bford             #+#    #+#             */
+/*   Updated: 2019/10/06 15:20:05 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
+#include <unistd.h>
 
-#include "ft_printf.h"
-
-int		ft_p(t_pf **l, va_list a)
+int		ft_putstr_num(const char *s, int n)
 {
-	if ((*l)->p == 0)
-		ft_p_func(l, (unsigned long long)va_arg(a, unsigned long long));
-	return (1);
+	write(1, s, n);
+	return (n);
 }

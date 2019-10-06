@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 14:48:38 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 15:33:35 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 # include <stdarg.h>
 # include "libft.h"
 
-typedef struct	t_pr
+typedef struct		s_pr
 {
-	int			p;
-	int			m;
-	int			o;
-	int			s;
-	int			nol;
-	int			i1;
-	int			i1was;
-	int			point;
-	int			i2;
-	int			i2was;
-	int			f;
-	char		c;
-	int			all;
-}				t_pf;
+	int				p;
+	int				m;
+	int				o;
+	int				s;
+	int				nol;
+	int				i1;
+	int				i1was;
+	int				point;
+	int				i2;
+	int				i2was;
+	int				f;
+	char			c;
+	int				all;
+}					t_pf;
 
 int					ft_printf(char *s, ...);
 int					ft_do_job(char **s, va_list a, t_pf *l);
@@ -58,24 +58,14 @@ int					ft_o(t_pf **l, va_list a);
 int					ft_o_func(t_pf **l, unsigned long long o);
 int					ft_putnbr_o(unsigned long long u, t_pf **l, int len);
 int					ft_x(t_pf **l, va_list a);
-int					ft_putnbr_x(unsigned long long x, t_pf **l, int len, char big);
+int					ft_putnbr_x(unsigned long long x, t_pf **l,
+int len, char big);
 int					ft_x_func(t_pf **l, unsigned long long x);
-
 int					ft_p(t_pf **l, va_list a);
-int					ft_p_func(t_pf **l, unsigned long long p);
-
+void				ft_p_func(t_pf **l, unsigned long long p);
 int					ft_f(t_pf **l, va_list a);
 int					ft_f_func(t_pf **l, long double f);
-int					ft_putnbr_f(long long, t_pf **l, int second_len);
+int					ft_putnbr_f(long long second, t_pf **l, int second_len);
 int					ft_putnbr_second(long long d, t_pf **l, int len);
-/*
-int		ft_p(t_pf *l, va_list a);
-int		ft_d(t_pf *l, va_list a);
-int		ft_o(t_pf *l, va_list a);
-int		ft_u(t_pf *l, va_list a);
-int		ft_x(t_pf *l, va_list a);
-int		ft_bigx(t_pf *l, va_list a);
-int		ft_f(t_pf *l, va_list a);
-*/
 
 #endif
