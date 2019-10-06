@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 15:05:58 by bford             #+#    #+#             */
-/*   Updated: 2019/10/03 18:33:25 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:49:21 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ int		ft_p_func(t_pf **l, unsigned long long p)
 		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
 		(*l)->all += ft_putstr("0x");
 		ft_many_write('0', (*l)->i2 - 4, l);
-		//ft_many_write((*l)->c, 1, l);
-		//(*l)->all += (!p ? 0 : ft_putstr("7fff"));
-		ft_putnbr_xX(p, l, len, 'x');
+		ft_putnbr_x(p, l, len, 'x');
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len - 2, l);
 	}
 	else
@@ -39,14 +37,10 @@ int		ft_p_func(t_pf **l, unsigned long long p)
 		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
 		(*l)->i2 = ((*l)->nol && !((*l)->i2) ? (*l)->i1 - len : (*l)->i2);
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len - 2, l);
-		//(*l)->o && p ? ft_many_write('0', 1, l) && ft_many_write((*l)->c, 1, l): 0;
 		(*l)->all += ft_putstr("0x");
 		ft_many_write('0', (*l)->i2, l);
-		//(*l)->all +=  (!p ? 0 : ft_putstr("7fff"));
 		if (!(p == 0 && !i2copy && (*l)->point))
-			ft_putnbr_xX(p, l, len, 'x');
-		//else if (p == 0 && (*l)->i1was && (*l)->point)
-		//	ft_many_write(' ', 1, l);
+			ft_putnbr_x(p, l, len, 'x');
 	}
 	return (1);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_xX.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/02 20:46:15 by bford             #+#    #+#             */
-/*   Updated: 2019/10/03 18:33:36 by bford            ###   ########.fr       */
+/*   Created: 2019/10/06 14:48:18 by bford             #+#    #+#             */
+/*   Updated: 2019/10/06 14:48:20 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putnbr_xX(unsigned long long x, t_pf **l, int len, char big)
+int		ft_putnbr_x(unsigned long long x, t_pf **l, int len, char big)
 {
 	unsigned long long	i;
 	unsigned long long	res;

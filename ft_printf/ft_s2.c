@@ -6,15 +6,13 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 12:31:08 by bford             #+#    #+#             */
-/*   Updated: 2019/10/02 12:29:32 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:51:57 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "ft_printf.h"
 
-int		ft_s2(t_pf **l, char *s) //, char **ms)
+int		ft_s2(t_pf **l, char *s)
 {
 	char	*ms;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 11:20:20 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:34:41 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ t_pf	*ft_pars_param_itwo(char **s, va_list a, t_pf *l)
 	int n;
 
 	n = 0;
-	if (**s == '.' && (*s)++ && (l->point = 1))
+	if (**s == '.')
 	{
+		(*s)++;
+		l->point = 1;
 		if (**s == '*' && (*s)++ && (l->i2was = 1))
 			n += va_arg(a, int);
 		if (**s >= '0' && **s <= '9')
@@ -64,10 +66,15 @@ t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
 	int n;
 
 	n = 0;
-	if (**s == '*' && (*s)++ && (l->i1was = 1))
-		n += va_arg(a, int);
-	if (**s >= '0' && **s <= '9' && !(n = 0))
+	if (**s == '*')
 	{
+		(*s)++;
+		l->i1was = 1;
+		n += va_arg(a, int);
+	}
+	if (**s >= '0' && **s <= '9')
+	{
+		n = 0;
 		l->i1was = 1;
 		while (**s >= '0' && **s <= '9')
 		{
@@ -82,18 +89,18 @@ t_pf	*ft_pars_param_ione(char **s, va_list a, t_pf *l)
 t_pf	*ft_pars_param_mpons(char **s, va_list a, t_pf *l)
 {
 	char	c;
-	
+
 	c = **s;
-	while (c && (c == '-' || c == '#' || c == '+' || c == ' ' || c == '0'))
+	while (c && (c == '-' || c == '+' || c == '0' || c == ' ' || c == '#'))
 	{
 		if (c == '-')
 			l->m = 1;
 		else if (c == '+')
 			l->p = 1;
-		else if (c == '0')
-			l->nol = 1;
 		else if (c == '#')
 			l->o = 1;
+		else if (c == '0')
+			l->nol = 1;
 		else
 			l->s = 1;
 		c = *(++(*s));
@@ -104,7 +111,7 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a, t_pf *l)
 int		ft_do_job(char **s, va_list a, t_pf *l)
 {
 	(*s)++;
-	if ((l = ft_pars_param_mpons(s, a, l))  && ft_postwork(&l, a))
+	if ((l = ft_pars_param_mpons(s, a, l)) && ft_postwork(&l, a))
 		return (1);
 	return (0);
 }

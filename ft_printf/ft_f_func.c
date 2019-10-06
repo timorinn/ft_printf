@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 18:25:59 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 19:14:44 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:40:21 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ int		ft_f_func(t_pf **l, long double f)
 	char		sign;
 
 	(*l)->i2 = ((*l)->i2 || (!(*l)->i2 && (*l)->point) ? (*l)->i2 : 6);
-
 	sign = (f < 0 ? '-' : 0);
 	sign = (!sign && (*l)->p ? '+' : sign);
 	sign = (!sign && (*l)->s ? ' ' : sign);
-	second = (((*l)->i2) ? (f - (long double)((long long)f)) * ft_power(10, (*l)->i2 + 1) / 10 : 0);
-	
-	if ((*l)->point && !(*l)->i2 && ((int)(f * 10.0) % 10 >= 5 ))
+	second = (((*l)->i2) ?
+	(f - (long double)((long long)f)) * ft_power(10, (*l)->i2 + 1) / 10 : 0);
+	if ((*l)->point && !(*l)->i2 && ((int)(f * 10.0) % 10 >= 5))
 		f++;
-	else if ((*l)->point && !(*l)->i2 && ((int)(f * 10.0) % 10 <= -5 ))
+	else if ((*l)->point && !(*l)->i2 && ((int)(f * 10.0) % 10 <= -5))
 		f--;
 	if (f < 0 && ((long long)(second * 10)) % 10 <= -5)
-	{	
+	{
 		second -= 1.0;
 		if (-1 * (long long)(second) % ft_power(10, (*l)->i2) == 0)
 			f--;
@@ -46,7 +45,7 @@ int		ft_f_func(t_pf **l, long double f)
 	second *= (second < 0 ? -1 : 1);
 	(*l)->i1 -= (!(*l)->point || ((*l)->point && (*l)->i2) ? 1 : 0);
 	first = ft_lennbr_d(f, 10);
-	(*l)->i1 -= (*l)->point + (*l)->i2  + (sign > 0);
+	(*l)->i1 -= (*l)->point + (*l)->i2 + (sign > 0);
 	if ((*l)->m)
 	{
 		if (sign)
@@ -60,7 +59,6 @@ int		ft_f_func(t_pf **l, long double f)
 	}
 	else
 	{
-		//ft_many_write((*l)->nol ? '0' : ' ', (*l)->i1 - (*l)->i2 /* (*l)->point */  - first /*- sign */, l);
 		ft_many_write((*l)->nol ? '0' : ' ', (*l)->i1, l);
 		if (sign)
 			ft_many_write(sign, 1, l);
@@ -70,5 +68,5 @@ int		ft_f_func(t_pf **l, long double f)
 		if ((*l)->i2)
 			ft_putnbr_second(second, l, (*l)->i2);
 	}
-	return(1);
+	return (1);
 }

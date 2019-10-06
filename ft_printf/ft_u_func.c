@@ -6,11 +6,9 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 16:34:46 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 16:38:12 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:51:03 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include "ft_printf.h"
 
@@ -28,20 +26,20 @@ int		ft_u_func(t_pf **l, unsigned long long u)
 	{
 		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
 		ft_many_write('0', (*l)->i2, l);
-		if (!(u == 0  && (*l)->point))
+		if (!(u == 0 && (*l)->point))
 			ft_putnbr_u(u, l, len);
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
 	}
 	else
 	{
-		if (((*l)->i2 < 0) || ( !(*l)->i2 && !(*l)->point && (*l)->nol))
+		if (((*l)->i2 < 0) || (!(*l)->i2 && !(*l)->point && (*l)->nol))
 			(*l)->i2 = (*l)->i1 - len;
 		else if ((*l)->i2 < len)
 			(*l)->i2 = 0;
 		else
 			(*l)->i2 -= len;
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
-		ft_many_write('0', (*l)->i2, l);;
+		ft_many_write('0', (*l)->i2, l);
 		if (!(u == 0 && (*l)->point))
 			ft_putnbr_u(u, l, len);
 	}

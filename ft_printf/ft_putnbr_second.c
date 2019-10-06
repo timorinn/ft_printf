@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/05 13:08:59 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 18:37:57 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:53:03 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		ft_putnbr_second(long long d, t_pf **l, int len)
 		d = d % (i * 10);
 	if (i == 10)
 		i = 1;
-	//printf("\nSECOND == %lld\nI == %lld\n", d, i);
 	while (i)
 	{
 		ft_many_write(d / i + '0', 1, l);

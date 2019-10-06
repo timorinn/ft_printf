@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 16:12:02 by bford             #+#    #+#             */
-/*   Updated: 2019/10/04 16:10:38 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 14:41:03 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int		ft_d_func(t_pf **l, long long d)
 			ft_many_write(sign, 1, l);
 		(*l)->i2 = ((*l)->i2 - len >= 0 ? (*l)->i2 - len : 0);
 		ft_many_write('0', (*l)->i2, l);
-		if (!(d == 0  && (*l)->point))
+		if (!(d == 0 && (*l)->point))
 			ft_putnbr_d(d, l, len);
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
 	}
 	else
 	{
-		if (((*l)->i2 < 0) || ( !(*l)->i2 && !(*l)->point && (*l)->nol))
+		if (((*l)->i2 < 0) || (!(*l)->i2 && !(*l)->point && (*l)->nol))
 			(*l)->i2 = (*l)->i1 - len;
 		else if ((*l)->i2 < len)
 			(*l)->i2 = 0;
@@ -50,7 +50,7 @@ int		ft_d_func(t_pf **l, long long d)
 		ft_many_write(' ', (*l)->i1 - (*l)->i2 - len, l);
 		if (sign)
 			ft_many_write(sign, 1, l);
-		ft_many_write('0', (*l)->i2, l);;
+		ft_many_write('0', (*l)->i2, l);
 		if (!(d == 0 && (*l)->point))
 			ft_putnbr_d(d, l, len);
 	}
