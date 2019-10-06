@@ -6,18 +6,18 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:16:12 by bford             #+#    #+#             */
-/*   Updated: 2019/10/05 19:33:26 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 10:08:10 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_printf.h"
-#include "libft.h"
+//#include <unistd.h>
+//#include "ft_printf.h"
+//#include "libft.h"
 #include <stdio.h>
 
 int		main(void)
 {
-	
+	/*
 	printf(" num1 = %d\n", printf("{%f}", 1.0));
 	printf(" num1 = %d\n\n", ft_printf("{%f}", 1.0));
 
@@ -75,6 +75,7 @@ int		main(void)
 
 	printf(" num4 = %d\n", printf("@moulitest: %#.o %#.0o", 0, 0));
 	printf(" num4 = %d\n\n", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
+	*/
 	/*
 	printf(" num5 = %d\n", printf("{%05d}", 42));
 	printf(" num5 = %d\n\n", ft_printf("{%05d}", 42));
