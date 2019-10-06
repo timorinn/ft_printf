@@ -6,11 +6,10 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 17:18:57 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 15:04:28 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 18:08:46 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
 int		ft_putnbr_d(long long d, t_pf **l, int len)

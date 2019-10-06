@@ -6,11 +6,10 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/05 13:08:59 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 14:53:03 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 18:08:56 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
 int		ft_putnbr_second(long long d, t_pf **l, int len)

@@ -6,11 +6,9 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 20:19:35 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 14:47:31 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 18:08:33 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include <stdlib.h>
 #include <stdarg.h>
