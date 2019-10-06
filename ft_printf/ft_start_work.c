@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_do_job.c                                        :+:      :+:    :+:   */
+/*   ft_start_work.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/27 13:24:45 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 14:34:41 by bford            ###   ########.fr       */
+/*   Created: 2019/10/06 18:30:22 by bford             #+#    #+#             */
+/*   Updated: 2019/10/06 18:30:38 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ t_pf	*ft_pars_param_mpons(char **s, va_list a, t_pf *l)
 	return (ft_pars_param_ione(s, a, l));
 }
 
-int		ft_do_job(char **s, va_list a, t_pf *l)
+int		ft_start_work(char **s, va_list a, t_pf *l)
 {
 	(*s)++;
 	if ((l = ft_pars_param_mpons(s, a, l)) && ft_postwork(&l, a))

@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:02:56 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 10:33:00 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 18:29:50 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_printf(char *s, ...)
 	{
 		if (*s == '%')
 		{
-			if (!ft_do_job(&s, a, l))
+			if (!ft_start_work(&s, a, l))
 				return (-ft_clearlist(&l));
 			continue;
 		}

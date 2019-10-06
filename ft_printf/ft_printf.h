@@ -6,7 +6,7 @@
 /*   By: bford <bford@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 12:26:33 by bford             #+#    #+#             */
-/*   Updated: 2019/10/06 15:33:35 by bford            ###   ########.fr       */
+/*   Updated: 2019/10/06 18:29:30 by bford            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct		s_pr
 }					t_pf;
 
 int					ft_printf(char *s, ...);
-int					ft_do_job(char **s, va_list a, t_pf *l);
+int					ft_start_work(char **s, va_list a, t_pf *l);
 t_pf				*ft_lstnew_pf(void);
 int					ft_postwork(t_pf **l, va_list a);
 int					ft_pr(t_pf **l);
