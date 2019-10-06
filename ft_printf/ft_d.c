@@ -20,7 +20,7 @@ int		ft_d(t_pf **l, va_list a)
 	int		flag;
 
 	flag = (*l)->f;
-	if (!((*l)->o) && 
+	if (!((*l)->o) &&
 	(((flag == 0) && ft_d_func(l, (int)(va_arg(a, long long)))) ||
 	((flag == 1) && ft_d_func(l, (char)(va_arg(a, long long)))) ||
 	((flag == 2) && ft_d_func(l, (long long)(va_arg(a, long long)))) ||
